@@ -4,18 +4,44 @@ body {
 	font-family: "Work Sans", sans-serif;
 	font-weight: 500;
 }
+
 .container {
 
-	width: 80%;
+	width: 70%;
 	margin: 0 auto;
 
 }
 
-header {
-	background: #55d6ab;
-	position:fixed;
-	width: 100%;
+.container2 {
+	position: relative;
+	padding-top: 200px;
+	text-align: center;
 }
+
+.container3 {
+    padding-right: 35px;
+    padding-left: 35px;
+    margin-right: auto;
+    margin-left: auto;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: left;
+}
+
+.introduction {
+	position : absoulte;
+	top: 50%;
+	left: 50%;
+	/*transform: translate(-50%, -50%);*/
+}
+
+.section-title {
+	padding-left: 105px;
+}
+
+
+
 
 header::after {
 	
@@ -25,18 +51,20 @@ header::after {
 	clear: both;
 }
 
-
 .logo {
 	float: left;
 	padding: 10px 0px;
 }
 
-
 nav {
+	
 	display: block;
-
+	width: 100%;
 	background: #55d6ab;
-	float: right;
+	/* Make the nav bar fix at the top*/
+	top: 0px;
+	position:fixed;
+
 }
 
 nav ul {
@@ -47,17 +75,17 @@ nav ul {
 
 nav li {
 	display: inline-block;
-	margin-left: 70px;
+	margin-left: 40px;
 	padding-top: 25px;
-	
 	position: relative;
+	float: right;
 }
 
 nav a {
 	color : #444;
 	text-decoration: none;
 	text-transform: uppercase;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 nav a:hover{
@@ -84,3 +112,24 @@ nav a::before{
 nav a:hover::before{
 	width : 100%;
 }
+
+
+
+.jumbotron{
+	padding:200px 30px 200px 30px;
+	background-image: url('../img/nabula.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+    z-index: -1;
+	height: 500px;
+	top: 0px;
+}
+
+
+
+
+
+
