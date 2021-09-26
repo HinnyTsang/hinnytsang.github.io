@@ -1,6 +1,6 @@
 body {
     margin: 0;
-	background: #222;
+	background: #fff;
 	font-family: "Work Sans", sans-serif;
 	font-weight: 500;
 }
@@ -8,13 +8,18 @@ body {
 
 	width: 80%;
 	margin: 0 auto;
+
 }
 
 header {
 	background: #55d6ab;
+	position:fixed;
+	width: 100%;
 }
 
 header::after {
+	
+	top:0;
 	content: "";
 	display: table;
 	clear: both;
@@ -28,6 +33,9 @@ header::after {
 
 
 nav {
+	display: block;
+
+	background: #55d6ab;
 	float: right;
 }
 
