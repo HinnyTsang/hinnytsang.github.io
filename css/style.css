@@ -1,7 +1,17 @@
 body {
-    margin: 60px auto;
+    margin: 0;
+	background: #222;
+	font-family: "Work Sans", sans-serif;
+	font-weight: 300;
     width: 70%;
 }
+.container {
+
+	width:80%;
+	margin: 0 auto;
+}
+
+
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
