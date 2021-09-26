@@ -1,3 +1,5 @@
+html{scroll-behavior:smooth}
+
 body {
     margin: 0;
 	background: #fff;
@@ -19,7 +21,7 @@ body {
 }
 
 .container3 {
-    padding-right: 35px;
+    padding-right: 235px;
     padding-left: 35px;
     margin-right: auto;
     margin-left: auto;
@@ -28,6 +30,12 @@ body {
 	padding-bottom: 100px;
 	text-align: left;
 }
+
+
+.container4 {
+	text-align: center;
+}
+
 
 .introduction {
 	position : absoulte;
@@ -40,7 +48,25 @@ body {
 	padding-left: 105px;
 }
 
+.section-paragraph {
+	position: relative;
+	padding-left: 105px;
+	padding-right: 105px;
+	z-index:3;
+}
 
+
+.bigtitle {
+	font-size: 70px;
+	color: #dbd8e1;
+	padding: 0 0 0 0;
+}
+
+.sign {
+	font-size: 20px;
+	color: #dbd8e1;
+	padding-top: 0;
+}
 
 
 header::after {
@@ -60,11 +86,11 @@ nav {
 	
 	display: block;
 	width: 100%;
-	background: #55d6ab;
+	background: #3B3646; /*#55d6ab;*/
 	/* Make the nav bar fix at the top*/
 	top: 0px;
 	position:fixed;
-
+	z-index=9999;
 }
 
 nav ul {
@@ -82,14 +108,14 @@ nav li {
 }
 
 nav a {
-	color : #444;
+	color : #dbd8e1;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 15px;
 }
 
 nav a:hover{
-	color:#000;
+	color:#fff;
 }
 
 
@@ -99,7 +125,7 @@ nav a::before{
 	display: block;
 	height: 5px;
 	width: 100%;
-	background-color: #333;
+	background-color: #f2f1f4;
 	
 	position: absolute;
 	top: 0%;
@@ -128,8 +154,25 @@ nav a:hover::before{
 	top: 0px;
 }
 
+.mail:link{
+	color: #000;
+	text-decoration: none;
+}
 
 
+footer {
+   position:relative;
+   bottom:0;
+   width:100%;
+   height:100px;   /* Height of the footer */
+   background:#3B3646;
+}
 
+#copyright {
+	position:relative;
+	top:30px;
+	text-align: center;
+	color:#f2f1f4;
+}
 
 
