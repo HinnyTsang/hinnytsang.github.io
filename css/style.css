@@ -11,7 +11,8 @@ body {
 
 	width: 70%;
 	margin: 0 auto;
-
+	position:relative;
+	z-index: -1;
 }
 
 .container2 {
@@ -20,15 +21,71 @@ body {
 	text-align: center;
 }
 
-.container3 {
-    padding-right: 235px;
-    padding-left: 35px;
-    margin-right: auto;
-    margin-left: auto;
+.container25 {
+	display:flex;
+	flex-direction: row;
+	width: 700px;
+    margin: auto;
 	position: relative;
 	padding-top: 100px;
 	padding-bottom: 100px;
 	text-align: left;
+	z-index: -1;
+}
+
+.container3 {
+	width: 700px;
+    margin: auto;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: left;
+	position:relative;
+	z-index: -1;
+}
+
+#title{
+	padding-top: 100px;
+	padding-bottom: 0px;
+}
+
+#bottom{
+	padding-top: 0px;
+	padding-bottom: 100px;
+}
+
+
+.col.columns{
+		flex:1;
+}
+
+
+.col:nth-of-type(even){
+	flex:1;
+}
+.col:nth-of-type(odd){
+	flex:2;
+}
+
+
+.container3 {
+	width: 700px;
+    margin: auto;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: left;
+}
+
+.section-paragraph-left {
+	position: relative;
+	padding-left: 0px;
+	padding-right: 100px;
+}
+
+.section-paragraph-right {
+	position: relative;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 
@@ -45,15 +102,16 @@ body {
 }
 
 .section-title {
-	padding-left: 105px;
+	padding-left: 0px;
 }
 
 .section-paragraph {
 	position: relative;
-	padding-left: 105px;
-	padding-right: 105px;
+	padding-left: 0px;
+	padding-right: 0px;
 	z-index:3;
 }
+
 
 
 .bigtitle {
@@ -80,6 +138,10 @@ header::after {
 .logo {
 	float: left;
 	padding: 10px 0px;
+}
+
+.fig {
+	width:300px;
 }
 
 nav {
