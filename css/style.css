@@ -217,7 +217,7 @@ nav a:hover::before{
 }
 
 .mail:link{
-	color: #000;
+	color: rgb(0, 0, 0);
 	text-decoration: none;
 }
 
