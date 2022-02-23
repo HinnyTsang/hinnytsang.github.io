@@ -1,240 +1,223 @@
-html{scroll-behavior:smooth}
+html {
+    scroll-behavior: smooth
+}
 
 body {
     margin: 0;
-	background: #fff;
-	font-family: "Work Sans", sans-serif;
-	font-weight: 500;
+    background: #fff;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
 }
 
 .container {
-
-	width: 70%;
-	margin: 0 auto;
-	position:relative;
-	z-index: -1;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    z-index: -1;
 }
 
 .container2 {
-	position: relative;
-	padding-top: 200px;
-	text-align: center;
+    position: relative;
+    padding-top: 200px;
+    text-align: center;
 }
 
 .container25 {
-	display:flex;
-	flex-direction: row;
-	width: 700px;
+    display: flex;
+    flex-direction: row;
+    width: 700px;
     margin: auto;
-	position: relative;
-	padding-top: 100px;
-	padding-bottom: 100px;
-	text-align: left;
-	z-index: -1;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: left;
+    z-index: -1;
 }
 
 .container3 {
-	width: 700px;
+    width: 700px;
     margin: auto;
-	padding-top: 100px;
-	padding-bottom: 100px;
-	text-align: left;
-	position:relative;
-	z-index: -1;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: left;
+    position: relative;
+    z-index: -1;
 }
 
-#title{
-	padding-top: 100px;
-	padding-bottom: 0px;
+#title {
+    padding-top: 100px;
+    padding-bottom: 0px;
 }
 
-#bottom{
-	padding-top: 0px;
-	padding-bottom: 100px;
+#bottom {
+    padding-top: 0px;
+    padding-bottom: 100px;
 }
 
-
-.col.columns{
-		flex:1;
+.col.columns {
+    flex: 1;
 }
 
-
-.col:nth-of-type(even){
-	flex:1;
-}
-.col:nth-of-type(odd){
-	flex:2;
+.col:nth-of-type(even) {
+    flex: 1;
 }
 
+.col:nth-of-type(odd) {
+    flex: 2;
+}
 
 .container3 {
-	width: 700px;
+    width: 700px;
     margin: auto;
-	position: relative;
-	padding-top: 100px;
-	padding-bottom: 100px;
-	text-align: left;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: left;
 }
 
 .section-paragraph-left {
-	position: relative;
-	padding-left: 0px;
-	padding-right: 100px;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 100px;
 }
 
 .section-paragraph-right {
-	position: relative;
-	padding-left: 0px;
-	padding-right: 0px;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
 }
-
 
 .container4 {
-	text-align: center;
+    text-align: center;
 }
 
-
 .introduction {
-	position : absoulte;
-	top: 50%;
-	left: 50%;
-	/*transform: translate(-50%, -50%);*/
+    position: absoulte;
+    top: 50%;
+    left: 50%;
+    /*transform: translate(-50%, -50%);*/
 }
 
 .section-title {
-	padding-left: 0px;
+    padding-left: 0px;
 }
 
 .section-paragraph {
-	position: relative;
-	padding-left: 0px;
-	padding-right: 0px;
-	z-index:3;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+    z-index: 3;
 }
 
-
-
 .bigtitle {
-	font-size: 70px;
-	color: #dbd8e1;
-	padding: 0 0 0 0;
+    font-size: 70px;
+    color: #dbd8e1;
+    padding: 0 0 0 0;
 }
 
 .sign {
-	font-size: 20px;
-	color: #dbd8e1;
-	padding-top: 0;
+    font-size: 20px;
+    color: #dbd8e1;
+    padding-top: 0;
 }
 
-
 header::after {
-	
-	top:0;
-	content: "";
-	display: table;
-	clear: both;
+    top: 0;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .logo {
-	float: left;
-	padding: 10px 0px;
+    float: left;
+    padding: 10px 0px;
 }
 
 .fig {
-	width:300px;
+    width: 300px;
 }
 
 nav {
-	
-	display: block;
-	width: 100%;
-	background: #3B3646; /*#55d6ab;*/
-	/* Make the nav bar fix at the top*/
-	top: 0px;
-	position:fixed;
-	z-index=9999;
+    display: block;
+    width: 100%;
+    background: #3B3646;
+    /*#55d6ab;*/
+    /* Make the nav bar fix at the top*/
+    top: 0px;
+    position: fixed;
+    z-index=9999;
 }
 
 nav ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 nav li {
-	display: inline-block;
-	margin-left: 40px;
-	padding-top: 25px;
-	position: relative;
-	float: right;
+    margin-left: 40px;
+    padding-top: 25px;
+    position: relative;
+    float: right;
 }
 
 nav a {
-	color : #dbd8e1;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 15px;
+    color: #dbd8e1;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
 }
 
-nav a:hover{
-	color:#fff;
+nav a:hover {
+    color: #fff;
 }
 
-
-nav a::before{
-	
-	content: '';
-	display: block;
-	height: 5px;
-	width: 100%;
-	background-color: #f2f1f4;
-	
-	position: absolute;
-	top: 0%;
-	width : 0%;
-	
-	transition: all ease-in-out 300ms;
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #f2f1f4;
+    position: absolute;
+    top: 0%;
+    width: 0%;
+    transition: all ease-in-out 300ms;
 }
 
-
-nav a:hover::before{
-	width : 100%;
+nav a:hover::before {
+    width: 100%;
 }
 
-
-
-.jumbotron{
-	padding:200px 30px 200px 30px;
-	background-image: url('../img/nabula.jpg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	position: relative;
+.jumbotron {
+    padding: 200px 30px 200px 30px;
+    background-image: url('../img/nabula.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
     z-index: -1;
-	height: 500px;
-	top: 0px;
+    height: 500px;
+    top: 0px;
 }
 
-.mail:link{
-	color: rgb(0, 0, 0);
-	text-decoration: none;
+.mail:link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
 }
-
 
 footer {
-   position:relative;
-   bottom:0;
-   width:100%;
-   height:100px;   /* Height of the footer */
-   background:#3B3646;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    /* Height of the footer */
+    background: #3B3646;
 }
 
 #copyright {
-	position:relative;
-	top:30px;
-	text-align: center;
-	color:#f2f1f4;
+    position: relative;
+    top: 30px;
+    text-align: center;
+    color: #f2f1f4;
 }
-
-
