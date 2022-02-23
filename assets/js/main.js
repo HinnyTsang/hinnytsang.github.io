@@ -1,3 +1,3 @@
 $(function() {
-    $("include-footer").load("footer.html");
+    $("include-footer").load("../includes/footer.html");
 });
