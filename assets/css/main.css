@@ -154,25 +154,25 @@ nav ul {
     list-style: none;
 }
 
-nav li {
+nav ul li {
     margin-left: 40px;
     padding-top: 25px;
     position: relative;
     float: right;
 }
 
-nav a {
+nav ul li a {
     color: #dbd8e1;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 15px;
 }
 
-nav a:hover {
+nav ul li a:hover {
     color: #fff;
 }
 
-nav a::before {
+nav ul li a::before {
     content: '';
     display: block;
     height: 5px;
