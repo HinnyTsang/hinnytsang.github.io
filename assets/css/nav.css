@@ -6,7 +6,6 @@
 
 .checkbtn {
     font-size: 30px;
-    color: white;
     float: right;
     margin-right: 40px;
     padding: 15px;
@@ -23,6 +22,7 @@ nav {
     background: #3B3646;
     position: fixed;
     z-index: 999;
+    opacity: 0.95;
 }
 
 nav ul {
@@ -72,6 +72,7 @@ nav a:hover::before {
 @media (max-width: 768px) {
     .checkbtn {
         display: block;
+        color: rgb(208, 208, 208);
     }
     ul {
         background: #3B3646;
