@@ -9,7 +9,7 @@ function change_bar() {
     // console.log("calling function change_bar()");
     var ul = document.getElementById("navigation");
 
-    if (ul.style.left == "-120%") {
+    if (ul.style.left != "0%") {
         ul.style.left = "0%";
     } else {
         ul.style.left = "-120%";
