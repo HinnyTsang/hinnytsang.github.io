@@ -1,191 +1,211 @@
-* {
-    color: rgb(79, 79, 79);
-    transition: font-size .2s linear;
-    -o-transition: font-size .2s linear;
-    -moz-transition: font-size .2s linear;
-    -webkit-transition: font-size .2s linear;
-}
-
-html {
-    scroll-behavior: smooth
-}
-
-body {
-    margin: 0;
-    background: #fff;
-    font-family: "Work Sans", sans-serif;
-    font-weight: 500;
-}
-
-.center {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.container.\31 00\25 {
-    width: 960px;
-}
-
-.container.\37 5\25 {
-    /* clear: left; */
-    width: 720px;
-    margin-bottom: 100px;
-    clear: both;
-}
-
-.container.\35 0\25 {
-    width: 480px;
-    display: block;
-}
-
-.container.\34 0\25 {
-    width: 350px;
-}
-
-.section {
-    display: block;
-    float: none;
-}
-
-.left {
-    clear: none;
-    float: left;
-}
-
-.right {
-    clear: none;
-    float: right;
-}
-
-.title {
-    color: #dbd8e1;
-    text-align: center;
-    margin: 0;
-}
-
-.big {
-    top: 50%;
-    font-size: 80px;
-    position: relative;
-}
-
-.big::before {
-    content: "";
-    display: block;
-    width: 15%;
-    height: 5px;
-    background: #dbd8e1;
-    left: 0;
-    top: 50%;
-    position: absolute;
-    opacity: 0.7;
-    transition: ease all .5;
-}
-
-.big::after {
-    content: "";
-    display: block;
-    width: 15%;
-    height: 5px;
-    background: #dbd8e1;
-    right: 0;
-    top: 50%;
-    opacity: 0.7;
-    position: absolute;
-    transition: ease all .5;
-}
-
-.logo {
-    float: left;
-    padding: 10px 0px;
-}
-
-.img {
-    width: 100%;
-    transition: all .2s linear;
-    -o-transition: all .2s linear;
-    -moz-transition: all .2s linear;
-    -webkit-transition: all .2s linear;
-}
-
-.caption {
-    font-size: 12px;
-    text-align: center;
-}
-
-:target::before {
-    content: "";
-    display: block;
-    height: 60px;
-    /* fixed header height*/
-    margin: -60px 0 0;
-    /* negative fixed header height */
-}
-
-.jumbotron {
-    padding: 200px 30px 200px 30px;
-    background-image: url('../../img/orion.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
-    z-index: -1;
-    height: 300px;
-    top: 0px;
-    transition: height .5s linear;
-    -o-transition: height .5s linear;
-    -moz-transition: height .5s linear;
-    -webkit-transition: height .5s linear;
-}
-
-.link {
-    cursor: pointer;
-    color: rgb(63, 63, 63);
-    text-decoration: none;
-}
-
-.link:hover {
-    color: rgb(0, 0, 0);
-    font-weight: 400;
-}
-
-
-/* below 768 - mobile */
-
-@media only screen and (max-width: 800px) {
-    .container.\37 5\25 {
-        width: 75%;
-        text-align: left;
+    * {
+        color: rgb(79, 79, 79);
+        transition: font-size .2s linear;
+        -o-transition: font-size .2s linear;
+        -moz-transition: font-size .2s linear;
+        -webkit-transition: font-size .2s linear;
     }
-    .container.\35 0\25 {
-        display: block;
+    
+    html {
+        scroll-behavior: smooth
+    }
+    
+    body {
+        margin: 0;
+        background: #fff;
+        font-family: "Work Sans", sans-serif;
+        font-weight: 500;
+    }
+    
+    .center {
+        margin-top: auto;
+        margin-bottom: auto;
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
     }
-    .container.\34 0\25 {
+    
+    .container {
         width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .container.\31 00\25 {
+        width: 960px;
+        width: 100%;
+    }
+    
+    .container.\37 5\25 {
+        /* clear: left; */
+        width: 720px;
+        margin-bottom: 100px;
+        clear: both;
+    }
+    
+    .container.\35 0\25 {
+        width: 480px;
         display: block;
     }
+    
+    .container.\34 0\25 {
+        width: 350px;
+    }
+    
+    .section {
+        display: block;
+        float: none;
+    }
+    
+    .left {
+        clear: none;
+        float: left;
+    }
+    
+    .right {
+        clear: none;
+        float: right;
+    }
+    
+    .title {
+        color: #dbd8e1;
+        text-align: center;
+        margin: 0;
+    }
+    
     .big {
-        font-size: 50px;
+        top: 50%;
+        font-size: 80px;
+        /* position: relative; */
     }
+    
     .big::before {
-        width: 0%;
+        content: "";
+        display: block;
+        width: 15%;
+        height: 5px;
+        background: #dbd8e1;
+        left: 0;
+        top: 50%;
+        position: absolute;
+        opacity: 0.7;
+        transition: ease all .5;
     }
+    
     .big::after {
-        width: 0%;
+        content: "";
+        display: block;
+        width: 15%;
+        height: 5px;
+        background: #dbd8e1;
+        right: 0;
+        top: 50%;
+        opacity: 0.7;
+        position: absolute;
+        transition: ease all .5;
     }
+    
+    .logo {
+        float: left;
+        padding: 10px 0px;
+    }
+    
+    .img {
+        width: 100%;
+        transition: all .2s linear;
+        -o-transition: all .2s linear;
+        -moz-transition: all .2s linear;
+        -webkit-transition: all .2s linear;
+    }
+    
+    .caption {
+        font-size: 12px;
+        text-align: center;
+    }
+    
+     :target::before {
+        content: "";
+        display: block;
+        height: 60px;
+        /* fixed header height*/
+        margin: -60px 0 0;
+        /* negative fixed header height */
+    }
+    
     .jumbotron {
-        height: 150px;
+        /* padding: 200px 30px 200px 30px; */
+        background-image: url('../../img/orion-small.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        position: relative;
+        z-index: -1;
+        height: 700px;
+        top: 0px;
+        transition: height .5s linear;
+        -o-transition: height .5s linear;
+        -moz-transition: height .5s linear;
+        -webkit-transition: height .5s linear;
     }
-}
+    
+    .big-title {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translateX(-50%);
+        transition: transform 1s;
+    }
+    
+    .link {
+        cursor: pointer;
+        color: rgb(63, 63, 63);
+        text-decoration: none;
+    }
+    
+    .link:hover {
+        color: rgb(0, 0, 0);
+        font-weight: 400;
+    }
+    
+    .reveal {
+        /* for scrolling animation*/
+        opacity: 0;
+        transform: translateY(150px);
+        transition: 1.5s all ease;
+    }
+    
+    .reveal.active {
+        /* for scrolling animation*/
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    /* below 768 - mobile */
+    
+    @media only screen and (max-width: 800px) {
+        .container.\37 5\25 {
+            width: 75%;
+            text-align: left;
+        }
+        .container.\35 0\25 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .container.\34 0\25 {
+            width: 100%;
+            display: block;
+        }
+        .big {
+            font-size: 50px;
+        }
+        .big::before {
+            width: 0%;
+        }
+        .big::after {
+            width: 0%;
+        }
+        .jumbotron {
+            height: 400px;
+        }
+    }

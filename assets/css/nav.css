@@ -113,7 +113,4 @@ nav a:hover::before {
         left: 5%;
         width: 90%;
     }
-    /* #check:checked~ul {
-        left: 0%;
-    } */
 }
