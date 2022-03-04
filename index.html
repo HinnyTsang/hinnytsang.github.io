@@ -6,9 +6,10 @@
     <link rel="icon" href="img/browser_tab_icon.ico">
     <link href="assets/css/main.css" rel="stylesheet" type="text/css">
     <link href="assets/css/nav.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/footer.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>Hinny Tsang</title>
+    <title>Hinny Tsang's Homepage</title>
 </head>
 
 <body>
@@ -16,108 +17,90 @@
     <nav id="nav-placeholder"></nav>
 
 
-    <div class="jumbotron">
-        <div class="container">
-            <div class="introduction">
-
-                <h1 class="bigtitle">Welcome to my homepage.</h1>
-                <p class="sign">
-
-                </p>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container 75% center">
+                <h4 class="title">Hi, I am</h4>
+                <h1 class="title big">Hinny Tsang</h1>
             </div>
         </div>
     </div>
 
 
-    <div class="section" id="about">
-        <div class="container3">
-            <div class="section-title">
+    <section id="about">
+        <div class="container 75%">
+            <header>
                 <h1> About</h1>
-            </div>
-            <div class="section-paragraph">
+            </header>
+            <div>
                 <p>
                     I am a MPhil student at The Chinese University of Hong Kong. Under the supervision of Prof. Li Hua-bai, I am now working on the starformation. I optained my Bachelor's Degree in Physics at The Hong Kong University of Science and Technology together with
-                    "Astronomy and Cosmology" and Information Technology Minor. I am enthusiastic about numerical fluid dynamics and data analysis.
+                    "Astronomy and Cosmology" and "Information Technology" Minors. I am enthusiastic about numerical fluid dynamics, data analysis and programming.
                 </p>
             </div>
         </div>
-    </div>
 
-    <!--  <div class="publication" id="about">
-			<div class="container3">
+    </section>
 
-			</div>
-		</div> -->
-    <div class="section" id="projects">
+    <section id="research">
+        <div class="container 75%">
+            <header>
+                <h1> Research</h1>
+            </header>
 
-        <div class="container25" id="title">
-            <div class="section-title">
-                <h1> Projects</h1>
+            <div class="container 40% left">
+                <p>
+                    Previous research observed the bimodal cloud-field alignment for the molecular cloud in Gould Belt <a herf="https://arxiv.org/abs/1310.6261" class="cite">(Li, 2013)</a>. Which indicated that molecular clouds in the Gould Belt are either
+                    perpendicular or parallel to the mean magnetic field direction when projected into the plane of the sky. The mass cumulative function slope (M) shows a significant correlation with the cloud-field offset <a herf="https://arxiv.org/abs/2009.05915"
+                        class="cite">(Law, 2020)</a>. As astronomical observation loses the depth of the cloud due to the projection effect, it is difficult to compare the 3D alignment of molecular cloud and magnetic field from observation. Therefore, our
+                    study aimed to analyze the relation between M and cloud-field offset with simulated clouds with known intrinsic 3D cloud-field alignment.
+                    <br>
+                    <!-- <br> Figure 1. shows the 2D velocity field with a certain input power spectrum. -->
+                </p>
+            </div>
+            <div class="container 40% right">
+                <img src="img/turb.png" alt="fig" class="img">
+                <p class="caption">Fig 1: Example of turbulent velocity field calculated by Scorpio.</p>
             </div>
         </div>
+    </section>
 
-        <div class="container25" id="bottom">
-
-            <div class="col">
-
-                <div class="section-paragraph-left">
-                    <p>
-                        I am currently working on molecular cloud simulation using Scorpio - a 3D MHD simulation suite that developed by Prof. Wang, Hsing-Hsu. Bimodal cloud-field alignment was observed (Li, 2013) which indicate that molecular clouds in the Gould Belt are either
-                        perpandicular or parallel to the mean magnetic field direction. (The project details are under constructed.)
-                        <br>
-                        <br> The figure on the lefts shows are 2d velocity field with certain input power spectrum.
-                    </p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="section-title">
-                    <h1> </h1>
-                </div>
-                <div class="section-paragraph-right">
-                    <img src="img/turb.png" alt="fig" class="fig">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section" id="experience">
-        <div class="container3">
-            <div class="section-title">
+    <section id="experience">
+        <div class="container 75%">
+            <header>
                 <h1> Experience</h1>
-            </div>
+            </header>
             <div class="section-paragraph">
                 <p>
                     To be constructed.
                 </p>
             </div>
         </div>
-    </div>
-    <div class="section" id="contact">
-        <div class="container3">
-            <div class="section-title">
+
+    </section>
+
+
+    <section id="contact">
+        <div class="container 75%">
+            <header>
                 <h1> Contact</h1>
-            </div>
+            </header>
             <div class="section-paragraph">
-                <h2>
+                <h4>
                     Mail
-                </h2>
+                </h4>
                 <p>
-                    <a class="mail" href="mailto:mhtsang@phy.cuhk.edu.hk">mhtsang@phy.cuhk.edu.hk</a>
+                    <a class="link" href="mailto:mhtsang@phy.cuhk.edu.hk">mhtsang@phy.cuhk.edu.hk</a>
                 </p>
-                <h2>
+                <h4>
                     LeetCode
-                </h2>
+                </h4>
                 <p>
-                    <a class="mail" href="https://leetcode.com/HinnyTsang/">https://leetcode.com/HinnyTsang</a>
-                </p>
-                <h2>
-                    <!--Phone*/-->
-                </h2>
-                <p>
-                    <!-- -->
+                    <a class="link" href="https://leetcode.com/HinnyTsang/">leetcode.com/HinnyTsang</a>
                 </p>
             </div>
         </div>
-    </div>
+    </section>
 
 
     <footer id="footer-placeholder">
@@ -126,6 +109,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/nav.js"></script>
 </body>
 
 </html>

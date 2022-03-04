@@ -1,13 +1,13 @@
 <input type="checkbox" id="check">
-<label for="check" class="checkbtn">
+<label for="check" class="checkbtn" onclick="change_bar()">
     <i class="fas fa-bars"></i>
 </label>
 
-<img src="img/browser_tab_icon.ico" alt="logo" class="logo">
-<ul>
+<!-- <img src="img/browser_tab_icon.ico" alt="logo" class="logo"> -->
+<ul id="navigation">
     <!-- <li><a href="#publication">Publication</a></li> -->
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#about">About Me</a></li>
+    <li><a href="#contact" onclick="remove_bar()">Contact</a></li>
+    <li><a href="#experience" onclick="remove_bar()">Experience</a></li>
+    <li><a href="#research" onclick="remove_bar()">Research</a></li>
+    <li><a href="#about" onclick="remove_bar()">About Me</a></li>
 </ul>

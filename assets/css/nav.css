@@ -22,6 +22,7 @@ nav {
     width: 100%;
     background: #3B3646;
     position: fixed;
+    z-index: 999;
 }
 
 nav ul {
@@ -32,9 +33,9 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    line-height: 80px;
+    line-height: 10px;
     margin: 0 10px;
-    padding-top: 25px;
+    padding-top: 10px;
     position: relative;
 }
 
@@ -54,7 +55,6 @@ nav ul li a::before {
     content: '';
     display: block;
     height: 5px;
-    width: 100%;
     background-color: #f2f1f4;
     position: absolute;
     top: 0%;
@@ -67,7 +67,7 @@ nav a:hover::before {
 }
 
 
-/* below 481 - mobile */
+/* below 768 - mobile */
 
 @media (max-width: 768px) {
     .checkbtn {
@@ -80,20 +80,39 @@ nav a:hover::before {
         height: 100vh;
         padding: 0;
         top: 40px;
-        left: -100%;
+        left: -120%;
         text-align: center;
         transition: all .5s;
+        opacity: 0.9;
     }
     nav ul li {
         display: block;
         margin: 0px 0;
-        line-height: 30px;
+        line-height: 40px;
+        padding-top: 20px;
+        padding-left: 30%;
+        padding-right: 30%;
         /* line-height: 80px; */
     }
     nav ul li a {
         font-size: 20px;
     }
-    #check:checked~ul {
-        left: 0%;
+    nav ul li a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background-color: #f2f1f4;
+        position: relative;
+        top: 0%;
+        left: 50%;
+        width: 0%;
+        transition: all ease-in-out 300ms;
     }
+    nav a:hover::before {
+        left: 5%;
+        width: 90%;
+    }
+    /* #check:checked~ul {
+        left: 0%;
+    } */
 }
