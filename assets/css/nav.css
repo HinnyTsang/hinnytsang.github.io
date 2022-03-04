@@ -69,7 +69,7 @@ nav a:hover::before {
 
 /* below 768 - mobile */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
     .checkbtn {
         display: block;
         color: rgb(208, 208, 208);
