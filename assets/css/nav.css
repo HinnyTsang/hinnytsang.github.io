@@ -73,6 +73,7 @@ nav a:hover::before {
     .checkbtn {
         display: block;
         color: rgb(208, 208, 208);
+        z-index: 9999;
     }
     ul {
         background: #3B3646;
@@ -112,5 +113,8 @@ nav a:hover::before {
     nav a:hover::before {
         left: 5%;
         width: 90%;
+    }
+    fas fa-bars {
+        color: rgb(208, 208, 208);
     }
 }
