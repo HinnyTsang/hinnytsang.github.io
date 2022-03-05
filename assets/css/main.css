@@ -31,15 +31,17 @@
     }
     
     .container.\31 00\25 {
-        width: 960px;
         width: 100%;
+    }
+    
+    .row {
+        margin-bottom: 200px;
+        clear: both;
     }
     
     .container.\37 5\25 {
         /* clear: left; */
         width: 720px;
-        margin-bottom: 100px;
-        clear: both;
     }
     
     .container.\35 0\25 {
@@ -202,10 +204,11 @@
             display: block;
         }
         .title {
-            transform: translateY(-100px);
+            transform: translateY(50%);
             font-size: 10px
         }
         .big {
+            transform: translateY(0%);
             font-size: 50px;
         }
         .big::before {
