@@ -1,4 +1,3 @@
 # hinnytsang.github.io
 
-Created by Tsang Man Hin.
-
+Static website. Will be updated using react.js.
