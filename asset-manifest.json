@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/hinnytsang.app/static/css/main.9757643e.css",
+    "main.js": "/hinnytsang.app/static/js/main.9b4e400f.js",
+    "static/media/orion.jpg": "/hinnytsang.app/static/media/orion.a867e4b2cdd43d05e384.jpg",
+    "index.html": "/hinnytsang.app/index.html",
+    "main.9757643e.css.map": "/hinnytsang.app/static/css/main.9757643e.css.map",
+    "main.9b4e400f.js.map": "/hinnytsang.app/static/js/main.9b4e400f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9757643e.css",
+    "static/js/main.9b4e400f.js"
+  ]
+}
