@@ -1,3 +1,5 @@
 # hinnytsang.github.io
 
-Static website. Will be updated using react.js.
+Static website. 
+
+new react version see `react-app` branch.
