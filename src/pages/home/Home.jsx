@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <Page>
-      <h1>Tsang Man Hin</h1>
+      
       <Row>
         <Col>Hi, welcome to my universe.
           This wepage is my personal webpage created with React.js as a learning project.
