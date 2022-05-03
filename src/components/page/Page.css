@@ -1,8 +1,17 @@
-.page {
+.page--container {
     min-height: 100vh;
+    max-width: 800px;
     justify-content: flex-start;
 }
 
 .title {
     padding: 20px;
+    text-align: center;
+    font-weight: 100 !important;
+    font-size: 60px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
 }

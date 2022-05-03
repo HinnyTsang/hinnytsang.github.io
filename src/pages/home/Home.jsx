@@ -1,15 +1,14 @@
 import React from 'react'
-import { useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import { Page } from '../../components';
 
-const Home = () => {
+const Home = ({darkMode}) => {
 
 
 
 
   return (
-    <Page>
+    <Page title={<p>MYstical - Universe</p>} darkMode={darkMode}>
       
       <Row>
         <Col>Hi, welcome to my universe.

@@ -1,9 +1,11 @@
 import React from 'react'
 import { Page } from '../../components'
 
-const Profile = () => {
+const Profile = ({darkMode}) => {
   return (
-    <Page>Profile</Page>
+    <Page title="Profile" darkMode={darkMode}>
+
+    </Page>
   )
 }
 

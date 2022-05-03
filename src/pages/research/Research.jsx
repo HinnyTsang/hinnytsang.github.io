@@ -1,10 +1,9 @@
 import React from 'react'
 import { Page } from '../../components'
 
-const Research = () => {
+const Research = ({darkMode}) => {
   return (
-    <Page>
-        <h1>Research</h1>
+    <Page title="Research" darkMode={darkMode}>
 
     </Page>
   )

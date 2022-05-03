@@ -1,10 +1,11 @@
 import React from 'react'
 import { Row, Col, Image } from 'react-bootstrap';
 import { Page } from '../../components';
+import './About.css'
 
-const About = () => {
+const About = ({darkMode}) => {
   return (
-    <Page className="about" title="Tsang Man Hin">
+    <Page className="about" title="Tsang Man Hin" darkMode={darkMode}>
       <Row>
         <Col>
           <p>I am a MPhil student at The Chinese University of Hong Kong.

@@ -1,36 +1,39 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import { Footer, Header, Jumbotron } from './components'
 import { Home, About, Research, Profile, Contact, NotFound } from './pages'
 import './App.css'
+import { useState } from 'react'
 // import { useEffect } from 'react'
 
 
 const App = () => {
+  
+  const [darkMode, setDarkMode] = useState(!false);
 
 
 
   return (
     <>
       {/* Router for the whole pages. */}
-      <BrowserRouter basename='/'>
+      <HashRouter basename='/'>
 
         <div className='app'>
-          <Header />
+          <Header darkMode={darkMode} switchMode={setDarkMode}/>
         </div>
         <Jumbotron />
 
         {/* Routes to the different pages */}
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/research' element={<Research />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='*' element={<NotFound />} />
+          <Route path='/' element={<Home darkMode={darkMode} />} />
+          <Route path='/about' element={<About darkMode={darkMode} />} />
+          <Route path='/research' element={<Research darkMode={darkMode} />} />
+          <Route path='/profile' element={<Profile darkMode={darkMode} />} />
+          <Route path='/contact' element={<Contact darkMode={darkMode} />} />
+          <Route path='*' element={<NotFound darkMode={darkMode} />} />
         </Routes>
-        <Footer />
-      </BrowserRouter>
+        <Footer  darkMode={darkMode}/>
+      </HashRouter>
     </>
   )
 }
