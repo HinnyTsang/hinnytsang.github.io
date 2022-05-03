@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/hinnytsang.app/static/css/main.9757643e.css",
-    "main.js": "/hinnytsang.app/static/js/main.9b4e400f.js",
+    "main.css": "/hinnytsang.app/static/css/main.fcea0551.css",
+    "main.js": "/hinnytsang.app/static/js/main.7d88a8d2.js",
     "static/media/orion.jpg": "/hinnytsang.app/static/media/orion.a867e4b2cdd43d05e384.jpg",
     "index.html": "/hinnytsang.app/index.html",
-    "main.9757643e.css.map": "/hinnytsang.app/static/css/main.9757643e.css.map",
-    "main.9b4e400f.js.map": "/hinnytsang.app/static/js/main.9b4e400f.js.map"
+    "main.fcea0551.css.map": "/hinnytsang.app/static/css/main.fcea0551.css.map",
+    "main.7d88a8d2.js.map": "/hinnytsang.app/static/js/main.7d88a8d2.js.map"
   },
   "entrypoints": [
-    "static/css/main.9757643e.css",
-    "static/js/main.9b4e400f.js"
+    "static/css/main.fcea0551.css",
+    "static/js/main.7d88a8d2.js"
   ]
 }
