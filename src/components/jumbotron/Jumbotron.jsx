@@ -19,6 +19,7 @@ const Jumbotron = () => {
         return response.json();
     }
 
+    // update the hello sentence by the elemenet id.
     getJSON(abstract_api + apiKey)
     .then(data => {
         document.getElementById("hello")

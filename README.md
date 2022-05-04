@@ -1,3 +1,12 @@
 # My personal webpage by React.js
+Future steps.
+- Node.js
 
-The new version of the website written by react.js and styling with react-bootstrap.
+- mongoDB
+
+- sign in system
+    - passport.
+    - cloud surface
+    - jwt
+
+- blog - db - UI design 
