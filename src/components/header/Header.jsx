@@ -22,6 +22,7 @@ const Header = ({ darkMode, switchMode }) => {
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
                         <Nav.Link as={Link} to="/research">Research</Nav.Link>
+                        <Nav.Link as={Link} to="/demo">Demo</Nav.Link>
                         <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                         <div className={

@@ -1,7 +1,7 @@
 import React from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import { Footer, Header, Jumbotron } from './components'
-import { Home, About, Research, Profile, Contact, NotFound } from './pages'
+import { Home, About, Research, Profile, Contact, Demo, NotFound } from './pages'
 import './App.css'
 import { useState } from 'react'
 // import { useEffect } from 'react'
@@ -28,6 +28,7 @@ const App = () => {
           <Route path='/' element={<Home darkMode={darkMode} />} />
           <Route path='/about' element={<About darkMode={darkMode} />} />
           <Route path='/research' element={<Research darkMode={darkMode} />} />
+          <Route path='/demo' element={<Demo darkMode={darkMode} />} />
           <Route path='/profile' element={<Profile darkMode={darkMode} />} />
           <Route path='/contact' element={<Contact darkMode={darkMode} />} />
           <Route path='*' element={<NotFound darkMode={darkMode} />} />
