@@ -185,8 +185,6 @@ const SPH = ({ darkMode }) => {
                             variant={darkMode ? 'dark' : 'info'}
                             onClick={energyInject}
                         >Pause</Button>}
-
-                        {/* <Button variant='dark'>Restart</Button> */}
                     </div>
                 </div>
             </div>

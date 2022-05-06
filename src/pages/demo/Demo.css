@@ -17,3 +17,27 @@
 .white {
     background-color: white;
 }
+
+.description {
+    flex-direction: column;
+    justify-content: start !important;
+}
+
+.section-title {
+    font-weight: 100;
+    font-size: xx-large;
+}
+
+.section-paragraph {
+    font-weight: 100;
+}
+
+.ref-url:hover {
+    text-decoration: none;
+}
+
+.ref-btn {
+    margin: 0;
+    padding: 2px;
+    width: 150px;
+}
