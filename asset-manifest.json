@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.b1d6ea45.css",
-    "main.js": "/static/js/main.ccd9137a.js",
+    "main.css": "/static/css/main.77dc67ae.css",
+    "main.js": "/static/js/main.dc14c33f.js",
     "static/media/orion.jpg": "/static/media/orion.a867e4b2cdd43d05e384.jpg",
     "index.html": "/index.html",
-    "main.b1d6ea45.css.map": "/static/css/main.b1d6ea45.css.map",
-    "main.ccd9137a.js.map": "/static/js/main.ccd9137a.js.map"
+    "main.77dc67ae.css.map": "/static/css/main.77dc67ae.css.map",
+    "main.dc14c33f.js.map": "/static/js/main.dc14c33f.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1d6ea45.css",
-    "static/js/main.ccd9137a.js"
+    "static/css/main.77dc67ae.css",
+    "static/js/main.dc14c33f.js"
   ]
 }
