@@ -37,13 +37,13 @@ const SPH = ({ darkMode }) => {
     const [zoom, setZoom] = useState(50)
 
     // hook for number of particles
-    const [numOfParticle, setNumOfParticle] = useState(50);
+    const [numOfParticle, setNumOfParticle] = useState(30);
 
 
     // paramters for simulation
     const [t, setT] = useState(0);
     let dt = 0.04
-    let m = 2 / numOfParticle  // mass of each particles
+    const [m, setM] = useState(2 / numOfParticle)  // mass of each particles
     let h = 0.1      //  0.04/Math.sqrt(numOfParticle/1000)      // smoothing parameters
     let k = 0.1      // EOS constant
     let n = 1        // polytropic index
@@ -76,6 +76,7 @@ const SPH = ({ darkMode }) => {
 
         if (isPlaying) {
             setT(0);
+            setM(2 / numOfParticle);
             setX(initialPosition());
             setY(initialPosition());
             setVx(initialVelocity());
@@ -83,6 +84,7 @@ const SPH = ({ darkMode }) => {
             let [ax0, ay0] = calcAcceleration(x, y, vx, vy, m, h, k, n, nu, lambda);
             setAx(ax0);
             setAy(ay0);
+
         }
         else {
             setPlaying(true);
@@ -169,13 +171,13 @@ const SPH = ({ darkMode }) => {
         <Ratio
             aspectRatio={'1x1'}
             bsPrefix={`canvas ${background}`}
-            onWheel={(e) => zoomIn(e)}
             ref={ref}
         >
             <div className='w-100 canvas--container' >
                 {Particles}
                 <div className='w-100 canvas--items'>
                     <p className={`counter text-${darkMode ? 'light' : 'dark'}`}> t = {t.toFixed(2)}</p>
+
                     <div className={`canvas--panel`}>
                         <Button
                             variant={darkMode ? 'dark' : 'info'}
@@ -185,6 +187,19 @@ const SPH = ({ darkMode }) => {
                             variant={darkMode ? 'dark' : 'info'}
                             onClick={energyInject}
                         >Pause</Button>}
+                        {/* <Button
+                            variant={darkMode ? 'dark' : 'info'} className="button--half"
+                            onClick={() => setM(prev => prev + .1 / numOfParticle)}
+                        >m+</Button>
+                        <Button
+                            variant={darkMode ? 'dark' : 'info'} className="button--half"
+                            onClick={() => setM(prev => Math.max(prev - .1 / numOfParticle, .1 / numOfParticle))}
+                        >m-</Button> */}
+                        <Button
+                            variant={darkMode ? 'dark' : 'info'}
+                            onClick={() => {setVx(prev => prev.map((val) => val*2 + (Math.random() - 0.5))); 
+                                setVy(prev => prev.map((val) => val*2 + (Math.random() - 0.5)))}}
+                        >Boost</Button>
                     </div>
                 </div>
             </div>

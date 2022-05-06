@@ -4,12 +4,13 @@ import { Row, Col, Button } from 'react-bootstrap'
 import { Page, SPH } from '../../components'
 import './Demo.css'
 
+
 const Demo = ({ darkMode }) => {
 
     const [showSPH, setShowSPH] = useState(false);
 
     return (
-        <Page title="Demo" darkMode={darkMode}>
+        <Page title="Demo" darkMode={darkMode} id="demo">
             <Row>
                 <Col className='d-flex description'>
                     <p className='section-title'>
@@ -17,7 +18,7 @@ const Demo = ({ darkMode }) => {
                     </p>
                     <p className='section-paragraph'>
                         Demonstraction of a smooth particle hydrodynamics simulation in 2D.
-                        We are simulating a star with SPH with a random initial conditions and a constant potential field.
+                        We are simulating a toy star with SPH with a random initial conditions and a constant potential field.
                         <br></br>
                         The code is receferenced by the
                         <a
@@ -26,7 +27,10 @@ const Demo = ({ darkMode }) => {
                         >
                             {' blog '}
                         </a>
-                        written by Philip Mocz in 2020.
+                        written by Philip Mocz in 2020. <br/>
+                        <br/>
+                        {showSPH? 'Click Boost to inject energy to the particles!' :
+                        'Click Start to start your simulation!'}
                     </p>
                     <Button
                         variant={darkMode ? 'secondary' : 'info'}

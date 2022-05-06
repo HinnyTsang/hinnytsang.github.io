@@ -1,3 +1,16 @@
 .footer--link:hover {
     text-decoration: none;
 }
+
+.footer {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer--info {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+}

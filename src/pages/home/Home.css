@@ -1,0 +1,19 @@
+.description {
+    padding-bottom: 70px;
+}
+
+.card {
+    max-width: 200px;
+    transition-duration: 0.2s;
+}
+.card:hover {
+    max-width: 201px;
+}
+
+.card--image{
+    margin: 5px;
+    height: auto;
+    width: auto;
+    max-width: 200px;
+    /* max-height: 200px; */
+}

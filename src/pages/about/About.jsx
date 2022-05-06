@@ -23,6 +23,7 @@ const About = ({ darkMode }) => {
         />
         </Col>
       </Row>
+
     </Page>
   )
 }

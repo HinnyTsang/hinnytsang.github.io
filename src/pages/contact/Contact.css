@@ -1,0 +1,7 @@
+.info {
+    padding: 20px 0px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}

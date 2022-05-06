@@ -9,9 +9,9 @@ import './Page.css'
 const Page = ({ children, title, darkMode }) => {
     // when every time first switch to current page, 
     // scroll the windows to the top.
-    useEffect(() => {
-        window.scroll(100, 10)
-    }, []);
+    // useEffect(() => {
+    //     window.scroll(100, 10)
+    // }, []);
 
     let colorTheme = (dark) => dark? 'light': 'dark';
     let backgroundTheme = (dark) => !dark? 'light': 'dark';

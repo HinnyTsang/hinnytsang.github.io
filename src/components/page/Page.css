@@ -1,7 +1,8 @@
 .page--container {
-    min-height: 100vh;
+    min-height: 70vh;
     max-width: 800px;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .title {
