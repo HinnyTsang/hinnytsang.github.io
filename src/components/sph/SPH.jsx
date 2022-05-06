@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState, useRef } from 'react';
-import { Ratio } from 'react-bootstrap'
+import { Button, Ratio } from 'react-bootstrap'
 import Particle from './particle/Particle';
 import { calcAcceleration, calcDensity } from './physics';
 
@@ -32,9 +32,13 @@ const SPH = ({ darkMode }) => {
 
     // for dark mode.
     var background = darkMode ? 'black' : 'white';
+    const [delay, setDelay] = useState(10);
+    const [isPlaying, setPlaying] = useState(true)
+    const [zoom, setZoom] = useState(50)
 
     // hook for number of particles
     const [numOfParticle, setNumOfParticle] = useState(50);
+
 
     // paramters for simulation
     const [t, setT] = useState(0);
@@ -47,7 +51,7 @@ const SPH = ({ darkMode }) => {
     let lambda = 1.5090246456120449 // potential
 
     // intial conditions
-    const initialPosition = () => Array.from({ length: numOfParticle }, () => (Math.random() - 0.5));
+    const initialPosition = () => Array.from({ length: numOfParticle }, () => (Math.random() - 0.5) * 5);
     const initialVelocity = () => Array(numOfParticle).fill(0);
 
     // all particles parameters
@@ -55,13 +59,56 @@ const SPH = ({ darkMode }) => {
     const [y, setY] = useState(initialPosition());
     const [vx, setVx] = useState(initialVelocity());
     const [vy, setVy] = useState(initialVelocity());
+    // const [vx, setVx] = useState(y.map(i => 10 * i));
+    // const [vy, setVy] = useState(x.map(i => -10 * i));
 
     let [ax0, ay0] = calcAcceleration(x, y, vx, vy, m, h, k, n, nu, lambda)
 
     const [ax, setAx] = useState(ax0);
     const [ay, setAy] = useState(ay0);
-
     const [density, setDensity] = useState(calcDensity(x, y, m, h));
+
+
+
+    // restart simulation
+
+    const resetSPH = () => {
+
+        if (isPlaying) {
+            setT(0);
+            setX(initialPosition());
+            setY(initialPosition());
+            setVx(initialVelocity());
+            setVy(initialVelocity());
+            let [ax0, ay0] = calcAcceleration(x, y, vx, vy, m, h, k, n, nu, lambda);
+            setAx(ax0);
+            setAy(ay0);
+        }
+        else {
+            setPlaying(true);
+        }
+
+    }
+
+
+    const energyInject = () => {
+        setPlaying(false);
+    }
+
+    const zoomIn = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (e.deltaY > 0) {
+            setZoom(prev => prev - 10)
+        }
+        else {
+            setZoom(prev => prev + 10)
+        }
+    }
+
+    const ref = React.createRef()
+    // ref.current.addEventListener('wheel', e => e.preventDefault());
 
     // particles into components
     let Particles = Array.from({ length: numOfParticle },
@@ -72,12 +119,15 @@ const SPH = ({ darkMode }) => {
                 x={x[index]}
                 y={y[index]}
                 density={density[index]}
-                darkMode={darkMode} />
+                darkMode={darkMode}
+                zoom={zoom} />
     );
+
+
 
     // main loop
     useInterval(() => {
-        
+
         let _vx = vx.concat();
         let _vy = vy.concat();
         let _x = x.concat();
@@ -105,20 +155,40 @@ const SPH = ({ darkMode }) => {
         setVy(_vy)
 
         setT(prev => prev + dt);
-        
+
         let density = calcDensity(_x, _y, m, h);
         setDensity(density.map(val => val / Math.max(...density)));
-    }, 100)
+        setNumOfParticle(numOfParticle);
+
+    }, isPlaying ? delay : null)
+
 
 
     return (
 
         <Ratio
             aspectRatio={'1x1'}
-            bsPrefix={`canvas ${background}`}>
-            <div className='w-100 canvas--container'>
+            bsPrefix={`canvas ${background}`}
+            onWheel={(e) => zoomIn(e)}
+            ref={ref}
+        >
+            <div className='w-100 canvas--container' >
                 {Particles}
-                <p className={`counter text-${darkMode? 'light': 'dark'}`}> t = {t.toFixed(2)}</p>
+                <div className='w-100 canvas--items'>
+                    <p className={`counter text-${darkMode ? 'light' : 'dark'}`}> t = {t.toFixed(2)}</p>
+                    <div className={`canvas--panel`}>
+                        <Button
+                            variant={darkMode ? 'dark' : 'info'}
+                            onClick={resetSPH}
+                        >{isPlaying ? 'Restart' : 'Continue'}</Button>
+                        {isPlaying && <Button
+                            variant={darkMode ? 'dark' : 'info'}
+                            onClick={energyInject}
+                        >Pause</Button>}
+
+                        {/* <Button variant='dark'>Restart</Button> */}
+                    </div>
+                </div>
             </div>
         </Ratio>
     )

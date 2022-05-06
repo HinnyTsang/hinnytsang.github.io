@@ -1,5 +1,5 @@
 import React from 'react'
-import { Page, SPH } from '../../components'
+import { Page } from '../../components'
 
 const Research = ({darkMode}) => {
   return (

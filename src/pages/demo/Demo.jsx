@@ -1,8 +1,13 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { useState } from 'react'
+import { Row, Col, Button } from 'react-bootstrap'
 import { Page, SPH } from '../../components'
+import './Demo.css'
 
 const Demo = ({ darkMode }) => {
+
+    const [showSPH, setShowSPH] = useState(false);
+
     return (
         <Page title="Demo" darkMode={darkMode}>
             <Row>
@@ -15,7 +20,16 @@ const Demo = ({ darkMode }) => {
                     </p>
                 </Col>
                 <Col>
-                    <SPH darkMode={darkMode} />
+                    {
+                        showSPH ?
+                            <SPH darkMode={darkMode} /> :
+                            <div className={`preview--container ${darkMode ? 'black' : 'white'}`} >
+                                <Button
+                                    variant={darkMode ? 'dark' : 'info'}
+                                    onClick={() => setShowSPH(true)}
+                                >Play</Button>
+                            </div>
+                    }
                 </Col>
             </Row>
         </Page>

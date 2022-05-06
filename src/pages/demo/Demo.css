@@ -1,0 +1,19 @@
+.btn {
+    width: 100px;
+}
+
+.preview--container{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
