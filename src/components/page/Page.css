@@ -1,18 +1,23 @@
 .page--container {
     min-height: 70vh;
     max-width: 800px;
-    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    opacity: 0.9;
 }
 
 .title {
     padding: 20px;
     text-align: center;
     font-weight: 100 !important;
-    font-size: 60px;
+    font-size: var(--titleSize1);
 }
 
 .wrapper {
+    position: relative;
     width: 100%;
     height: 100%;
+    opacity: 0.1;
 }

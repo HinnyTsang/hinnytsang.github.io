@@ -8,17 +8,12 @@ function calcKernel(dx, dy, h) {
      */
 
     const N = dx.length
-
     const normalize = (1 / (h * Math.sqrt(2 * Math.PI))) ** 2
-
-    let weight = Array(N).fill().map(() => Array(N).fill(0));
+    const weight = Array(N).fill().map(() => Array(N).fill(0));
 
     for (let i = 0; i < N; ++i) {
         for (let j = 0; j < N; ++j) {
-
             let r2 = dx[i][j] ** 2 + dy[i][j] ** 2
-
-            // console.log(r)
             weight[i][j] = normalize * Math.exp(-r2 / (h ** 2 * 2))
         }
     }
@@ -111,33 +106,26 @@ function calcAcceleration(x, y, vx, vy, m, h, k, n, nu, lambda) {
      * Calculate the acceleration for update.
      */
 
-    let N = x.length;
-
-
+    const N = x.length;
     const density = calcDensity(x, y, m, h);
-
     const pressure = calcPressure(density, k, n);
-
     const [dx, dy] = calcSeperations(x, y);
-
     const [dwx, dwy] = calcKernelGradient(dx, dy, h);
+    const ax = Array(N).fill(0);
+    const ay = Array(N).fill(0);
 
-    let dax = Array(N).fill(0);
-    let day = Array(N).fill(0);
-
-    
     for (let i = 0; i < N; ++i) {
 
         for (let j = 0; j < N; ++j) {            
-            dax[i] -= m * (pressure[i] / density[i] ** 2 +  pressure[j] / density[j] ** 2) * dwx[i][j];
-            day[i] -= m * (pressure[i] / density[i] ** 2 +  pressure[j] / density[j] ** 2) * dwy[i][j];
+            ax[i] -= m * (pressure[i] / density[i] ** 2 +  pressure[j] / density[j] ** 2) * dwx[i][j];
+            ay[i] -= m * (pressure[i] / density[i] ** 2 +  pressure[j] / density[j] ** 2) * dwy[i][j];
         }        
-        dax[i] -= lambda*x[i] + nu * vx[i];
-        day[i] -= lambda*y[i] + nu * vy[i];
+        ax[i] -= lambda*x[i] + nu * vx[i];
+        ay[i] -= lambda*y[i] + nu * vy[i];
     }
     
 
-    return [dax, day]
+    return [ax, ay]
 }
 
 

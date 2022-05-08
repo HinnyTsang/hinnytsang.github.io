@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import { Page , SubTitle } from '../../components';
 import './Home.css'
 
-const Home = ({ darkMode }) => {
+const Home = () => {
 
 
 
 
   return (
-    <Page title={<p>MYstical - Universe</p>} darkMode={darkMode}>
+    <Page title={<p>MYstical - Universe</p>}>
       
       <Row className='description'>
         <Col>Hi, welcome to my universe.
@@ -20,11 +20,10 @@ const Home = ({ darkMode }) => {
       </Row>
       
       <SubTitle>Whats New?</SubTitle>
-      <CardGroup>
+      <CardGroup className='card-group mt-5'>
         <Card
-          as={Link} to='../demo/#demo'
+          as={Link} to='../simulation/'
           className="card"
-          bg={darkMode ? 'secondary' : 'light'}
         >
           <Card.Img variant="top"
             src="/images/sph-icon.png" alt="sph" className='card--image' />

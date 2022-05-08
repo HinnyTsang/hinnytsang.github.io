@@ -2,12 +2,22 @@
     padding-bottom: 70px;
 }
 
+.card-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 .card {
     max-width: 200px;
     transition-duration: 0.2s;
+    background: var(--bgColor2);
+    border: 0;
+    box-shadow: 0 0 10px 0px var(--txtColor3);
 }
 .card:hover {
-    max-width: 201px;
+    box-shadow: 0 0 10px 0px var(--txtColor1);
 }
 
 .card--image{
@@ -15,5 +25,4 @@
     height: auto;
     width: auto;
     max-width: 200px;
-    /* max-height: 200px; */
 }

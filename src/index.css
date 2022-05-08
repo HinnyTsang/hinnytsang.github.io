@@ -1,0 +1,19 @@
+
+:root {
+    --txtColor1: '#212121';
+    --txtColor2: '#212121';
+    --txtColor3: '#212121';
+    --bgColor1: '#FAFAFA';
+    --bgColor2: '#212121';
+    --bgColor3: '#FAFAFA';
+    --sdColor: '#FAFAFA';
+    --txtShadow1: #f00;
+    --txtShadow2: #f00;
+    --txtShadow3: #f00;
+
+    --titleSize1: 40px;
+    --titleSize2: 30px;
+    --titleSize3: 20px;
+    
+    --ptColor: #aaaa;
+}

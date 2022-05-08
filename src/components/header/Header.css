@@ -1,6 +1,15 @@
 .navbar {
+    position: fixed;
+    width: 100%;
     opacity: 0.9;
     justify-content: space-around;
+    background-color: var(--bgColor1);
+    z-index: 10;
+}
+
+.navbar-brand {
+    font-weight: 10;
+    color: var(--txtColor1) !important;
 }
 
 .navbar-collapse {
@@ -9,6 +18,7 @@
 
 .navbar-nav {
     align-items: center;
+    opacity: 0.6;
 }
 
 .very-small{
@@ -17,15 +27,20 @@
     opacity: 0.7;
 }
 
+.nav-link{
+    color: var(--txtColor2) !important;
+}
+
 .mode-switcher {
     width: 150px;
     padding: 20px;
-    opacity: 60%;
+    color: var(--txtColor1);
 }
 
 .mode-bg {
     width: 30px;
     height: 20px;
+    background-color: var(--txtColor1);
     border-radius: 10px;
     display: flex;
     padding: 1px;
@@ -34,7 +49,7 @@
 .mode-button {
     width: 18px;
     height: 18px;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--bgColor1);
     border-radius: 10px;
     padding: 0;
 }

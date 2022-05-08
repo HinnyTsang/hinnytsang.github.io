@@ -1,3 +1,47 @@
-/* #root {
-    background-color: black;
-} */
+h1 {
+    text-shadow: 0px 0px 10px var(--txtShadow1);
+}
+
+*, a {
+    text-shadow: 0px 0px 10px var(--txtShadow1);
+    color: var(--txtColor1);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--txtColor3);
+}
+
+#space-travel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -3;
+}
+
+.btn {
+    background-color: var(--bgColor3);
+    color: var(--txtColor1);
+    border: 0;
+}
+
+.btn:hover {
+    background-color: var(--bgColor1);
+    color: var(--txtColor3);
+    box-shadow: 0 0 5px 1px var(--txtColor3);
+}
+
+.row {
+    margin: 50px 0 0 0;
+}
+
+.col {
+    width: 100%;
+    flex-direction: column;
+    justify-self: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+    
+}

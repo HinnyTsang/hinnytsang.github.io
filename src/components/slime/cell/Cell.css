@@ -1,8 +1,8 @@
-.particle {
+.cell {
     width: 3px;
     height: 3px;
     border-radius: 3px;
-    position: absolute;
+    position: absolute; 
     background-color: var(--ptColor);
-    box-shadow: 0 0 3px 2px var(--ptColor);
+    box-shadow: 0 0 10px 3px var(--ptColor);
 }

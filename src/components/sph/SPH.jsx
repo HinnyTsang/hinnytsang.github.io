@@ -1,119 +1,64 @@
 import React from 'react'
-import { useEffect, useState, useRef } from 'react';
-import { Button, Ratio } from 'react-bootstrap'
+import { useState } from 'react';
+import { Button } from 'react-bootstrap'
 import Particle from './particle/Particle';
 import { calcAcceleration, calcDensity } from './physics';
+import { useInterval } from '../../hooks';
+import { Sandbox } from '..';
+import { gamma } from 'mathjs'
 
 import './SPH.css'
 
 
-function useInterval(callback, delay) {
-    const savedCallback = useRef();
 
-    // Remember the latest callback.
-    useEffect(() => {
-        savedCallback.current = callback;
-    }, [callback]);
-
-    // Set up the interval.
-    useEffect(() => {
-        function tick() {
-            savedCallback.current();
-        }
-        if (delay !== null) {
-            let id = setInterval(tick, delay);
-            return () => clearInterval(id);
-        }
-    }, [delay]);
-}
-
-const SPH = ({ darkMode }) => {
+const SPH = () => {
 
 
-    // for dark mode.
-    var background = darkMode ? 'black' : 'white';
+    // calcualte the mean of the array
+    const arrayMean = (arr) => arr.reduce((a, b) => a + b) / arr.length;
+
     const [delay, setDelay] = useState(10);
     const [isPlaying, setPlaying] = useState(true)
-    const [zoom, setZoom] = useState(50)
 
     // hook for number of particles
-    const [numOfParticle, setNumOfParticle] = useState(30);
+    const [numOfParticle, setNumOfParticle] = useState(40);
 
 
     // paramters for simulation
     const [t, setT] = useState(0);
     let dt = 0.04
-    const [m, setM] = useState(2 / numOfParticle)  // mass of each particles
-    let h = 0.1      //  0.04/Math.sqrt(numOfParticle/1000)      // smoothing parameters
+    let M = 1        // mass of the whole star.
+    let m = M / numOfParticle  // mass of each particles
+    let h = 0.1      // smoothing parameters
     let k = 0.1      // EOS constant
     let n = 1        // polytropic index
+    let R = 1        // radius of the toy star
     let nu = 1       // viscosity factor
-    let lambda = 1.5090246456120449 // potential
+    let lambda = 2 * k * (1 + n) * Math.PI ** (-3 / (2 * n)) * (M * gamma(5 / 2 + n) / R ** 2 / gamma(1 + n)) ** (1 / n) / R  // potential
 
     // intial conditions
     const initialPosition = () => Array.from({ length: numOfParticle }, () => (Math.random() - 0.5) * 5);
-    const initialVelocity = () => Array(numOfParticle).fill(0);
+    const initialVelocity = () => {
+        const v = Array.from({ length: numOfParticle }, () => (Math.random() - 0.5));
+        const meanV = arrayMean(v);
+        // ensure the net velocity is zero, (mometum is not conserved.)
+        return (v.map(val => val - meanV));
+    };
 
     // all particles parameters
     const [x, setX] = useState(initialPosition());
     const [y, setY] = useState(initialPosition());
     const [vx, setVx] = useState(initialVelocity());
     const [vy, setVy] = useState(initialVelocity());
-    // const [vx, setVx] = useState(y.map(i => 10 * i));
-    // const [vy, setVy] = useState(x.map(i => -10 * i));
 
-    let [ax0, ay0] = calcAcceleration(x, y, vx, vy, m, h, k, n, nu, lambda)
-
+    // initial setting for density and acceleration.
+    const [ax0, ay0] = calcAcceleration(x, y, vx, vy, m, h, k, n, nu, lambda)
     const [ax, setAx] = useState(ax0);
     const [ay, setAy] = useState(ay0);
     const [density, setDensity] = useState(calcDensity(x, y, m, h));
 
-
-
-    // restart simulation
-
-    const resetSPH = () => {
-
-        if (isPlaying) {
-            setT(0);
-            setM(2 / numOfParticle);
-            setX(initialPosition());
-            setY(initialPosition());
-            setVx(initialVelocity());
-            setVy(initialVelocity());
-            let [ax0, ay0] = calcAcceleration(x, y, vx, vy, m, h, k, n, nu, lambda);
-            setAx(ax0);
-            setAy(ay0);
-
-        }
-        else {
-            setPlaying(true);
-        }
-
-    }
-
-
-    const energyInject = () => {
-        setPlaying(false);
-    }
-
-    const zoomIn = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (e.deltaY > 0) {
-            setZoom(prev => prev - 10)
-        }
-        else {
-            setZoom(prev => prev + 10)
-        }
-    }
-
-    const ref = React.createRef()
-    // ref.current.addEventListener('wheel', e => e.preventDefault());
-
     // particles into components
-    let Particles = Array.from({ length: numOfParticle },
+    const Particles = Array.from({ length: numOfParticle },
         (item, index) =>
             <Particle
                 key={index}
@@ -121,13 +66,10 @@ const SPH = ({ darkMode }) => {
                 x={x[index]}
                 y={y[index]}
                 density={density[index]}
-                darkMode={darkMode}
-                zoom={zoom} />
+            />
     );
 
-
-
-    // main loop
+    // main simulation loop
     useInterval(() => {
 
         let _vx = vx.concat();
@@ -164,46 +106,60 @@ const SPH = ({ darkMode }) => {
 
     }, isPlaying ? delay : null)
 
+    // restart the setting.
+    const resetSPH = () => {
+
+        if (isPlaying) {
+            setT(0);
+            setX(initialPosition());
+            setY(initialPosition());
+            setVx(initialVelocity());
+            setVy(initialVelocity());
+            let [ax0, ay0] = calcAcceleration(x, y, vx, vy, m, h, k, n, nu, lambda);
+            setAx(ax0);
+            setAy(ay0);
+
+        }
+        else {
+            setPlaying(true);
+        }
+    }
+
+    // inject energy to the particles
+    const energyInject = () => {
+        /**
+         * Momentum is not conserved.
+         */
+
+        const dvx = initialVelocity();
+        const dvy = initialVelocity();
+
+        setVx(prev => prev.map((val, idx) => val + 5 * dvx[idx]));
+        setVy(prev => prev.map((val, idx) => val + 5 * dvy[idx]));
+    }
 
 
     return (
 
-        <Ratio
-            aspectRatio={'1x1'}
-            bsPrefix={`canvas ${background}`}
-            ref={ref}
-        >
-            <div className='w-100 canvas--container' >
-                {Particles}
-                <div className='w-100 canvas--items'>
-                    <p className={`counter text-${darkMode ? 'light' : 'dark'}`}> t = {t.toFixed(2)}</p>
-
-                    <div className={`canvas--panel`}>
-                        <Button
-                            variant={darkMode ? 'dark' : 'info'}
-                            onClick={resetSPH}
-                        >{isPlaying ? 'Restart' : 'Continue'}</Button>
-                        {isPlaying && <Button
-                            variant={darkMode ? 'dark' : 'info'}
-                            onClick={energyInject}
-                        >Pause</Button>}
-                        {/* <Button
-                            variant={darkMode ? 'dark' : 'info'} className="button--half"
-                            onClick={() => setM(prev => prev + .1 / numOfParticle)}
-                        >m+</Button>
-                        <Button
-                            variant={darkMode ? 'dark' : 'info'} className="button--half"
-                            onClick={() => setM(prev => Math.max(prev - .1 / numOfParticle, .1 / numOfParticle))}
-                        >m-</Button> */}
-                        <Button
-                            variant={darkMode ? 'dark' : 'info'}
-                            onClick={() => {setVx(prev => prev.map((val) => val*2 + (Math.random() - 0.5))); 
-                                setVy(prev => prev.map((val) => val*2 + (Math.random() - 0.5)))}}
-                        >Boost</Button>
-                    </div>
+        <Sandbox>
+            {Particles}
+            <div className='w-100 canvas--items'>
+                <p className='counter'> t = {t.toFixed(2)}</p>
+                <div className={`canvas--panel`}>
+                    <Button onClick={resetSPH}>
+                        {isPlaying ? 'Restart' : 'Continue'}
+                    </Button>
+                    {isPlaying &&
+                        <Button onClick={() => setPlaying(false)} >
+                            Pause
+                        </Button>
+                    }
+                    <Button onClick={energyInject} >
+                        Boost
+                    </Button>
                 </div>
             </div>
-        </Ratio>
+        </Sandbox>
     )
 }
 

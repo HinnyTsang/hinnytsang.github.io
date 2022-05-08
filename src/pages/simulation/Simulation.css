@@ -8,19 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.black {
-    background-color: black;
-}
-
-.white {
-    background-color: white;
-}
-
-.description {
-    flex-direction: column;
-    justify-content: start !important;
+    opacity: 0.9;
+    background-color: var(--bgColor1);
 }
 
 .section-title {
@@ -37,7 +26,5 @@
 }
 
 .ref-btn {
-    margin: 0;
-    padding: 2px;
     width: 150px;
 }

@@ -1,9 +1,11 @@
 import React from 'react'
 import './SubTitle.css'
 
-const SubTitle = ({children}) => {
+const SubTitle = ({ children }) => {
   return (
-    <div className='subtitle'>{children}</div>
+    <div className='subtitle--container'>
+      <div className='subtitle'>{children}</div>
+    </div>
   )
 }
 

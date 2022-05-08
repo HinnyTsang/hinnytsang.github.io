@@ -4,13 +4,31 @@
 
 .footer {
     height: 100px;
+    margin-top: 50px;
+    background-color: var(--bgColor1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
+
+.footer > *{
+    color: var(--txtColor1) !important;
+}
+
 
 .footer--info {
     width: 70%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+
+
+.footer--copyright {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
