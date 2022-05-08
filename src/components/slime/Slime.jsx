@@ -100,7 +100,7 @@ const Slime = () => {
         setX(_x);
         setY(_y);
         setDirection(_d);
-    }, 50);
+    }, 100);
 
     return (
         <Sandbox>

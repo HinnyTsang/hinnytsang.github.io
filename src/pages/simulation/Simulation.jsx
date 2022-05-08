@@ -66,7 +66,7 @@ const Simulation = () => {
                     </p>
                     <Button
                         className='ref-btn'
-                        href='#'
+                        href='https://github.com/HinnyTsang/hinnytsang.github.io/tree/react-app/src/components/slime'
                     >
                         Check my code!
                     </Button>
