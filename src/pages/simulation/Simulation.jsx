@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { useState } from 'react'
 import { Row, Col, Button } from 'react-bootstrap'
 import { Page, SPH, SubTitle, Slime } from '../../components'
@@ -54,15 +55,18 @@ const Simulation = () => {
                 <Col className='d-flex description'>
                     <SubTitle>Slime Simulation</SubTitle>
                     <p className='section-paragraph'>
-                        Demonstraction of a physarum transport networks. The code is still under construction.
-                        <br></br>
-                        Algrothm is coming from Jones, Jeff's
+                        Demonstraction of a physarum transport networks. Inspired by Sebasian's 
+                        <a href="https://www.youtube.com/watch?v=X-iSQQgOd1A">
+                            {' video '}
+                        </a> and the algrothm is coming from Jones, Jeff's
                         <a
                             href='https://uwe-repository.worktribe.com/output/980579'
                             className='ref-url'
                         >
                             {' paper.'}
                         </a>
+                        <br></br>
+                        Click on the sandbox to give the slime some food!.
                     </p>
                     <Button
                         className='ref-btn'

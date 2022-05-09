@@ -1,13 +1,18 @@
 import React from 'react'
 import './Cell.css'
 
-const Cell = ({ x, y, id }) => {
+const Cell = ({ x, y, width, density, id }) => {
 
 
     const styles = {
-        top:  (3/2*x + 150),
-        left: (3/2*y + 150),
+        width: `${300 / width}px`,
+        height: `${300 / width}px`,
+        top: (300 / width * x + 150),
+        left: (300 / width * y + 150),
+        opacity: density
     }
+
+
 
 
     return (
