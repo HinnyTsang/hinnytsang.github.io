@@ -56,7 +56,7 @@ const Slime = () => {
                     id={i + j}
                     x={i - pixels / 2}
                     y={j - pixels / 2}
-                    density={food[i][j]}
+                    density={food[i][j]*2}
                     width={pixels}
                 />
             ))
@@ -92,6 +92,7 @@ const Slime = () => {
 
             // calculate the sensor value
             f = f.map((v, idx) => {
+                
                 let dx = so * Math.cos(v), dy = so * Math.sin(v);
                 let i = Math.max(Math.min(Math.floor((_x[c] + dx + w) / 2), w - 1), 0);
                 let j = Math.max(Math.min(Math.floor((_y[c] + dy + h) / 2), h - 1), 0);

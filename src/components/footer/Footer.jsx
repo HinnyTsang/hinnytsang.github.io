@@ -17,7 +17,7 @@ const Footer = () => {
                     space-travel theme from <a href='https://www.npmjs.com/package/space-travel'>frequin</a>
                 </div>
                 <div>
-                    <a role="button" href="mailto:hinnytsang@link.cuhk.edu.hk" className='ml-3'>
+                    <a role="button" href="mailto:hinny@hinnytsang.com" className='ml-3'>
                         <EnvelopeOpen style={{ fontSize: "20px" }} />
                     </a>
                     <a role="button" href="https://github.com/hinnytsang" className='ml-3'>

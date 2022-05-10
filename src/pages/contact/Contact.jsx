@@ -28,8 +28,8 @@ const Contact = () => {
       <Row className='info--container'>
         <div className='info mt-5'>
           <EnvelopeOpen style={{ fontSize: "25px" }} />
-          <a role="button" href="mailto:hinnytsang@link.cuhk.edu.hk" className={`ml-3`}>
-            hinnytsang@link.cuhk.edu.hk
+          <a role="button" href="mailto:hinny@hinnytsang.com" className={`ml-3`}>
+            hinny@hinnytsang.com
           </a>
         </div>
         <div className='info' >
