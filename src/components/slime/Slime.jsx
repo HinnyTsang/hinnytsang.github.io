@@ -7,7 +7,7 @@ import './Slime.css'
 
 const Slime = () => {
 
-    const [pixels, setPixels] = useState(35);
+    const [pixels, setPixels] = useState(25);
     const [nCell, setNCell] = useState(800);
 
     const [food, setFood] = useState(
@@ -16,13 +16,13 @@ const Slime = () => {
     );
 
     const h = pixels, w = pixels;
-    const dl = 1.2;                   // speed of the mold
-    const sa = 50 / 180 * Math.PI;        // sensor angle
+    const dl = 1.2;                        // speed of the mold
+    const sa = 50 / 180 * Math.PI;         // sensor angle
     const turnSpeed = 50 / 180 * Math.PI;  // turn speed in rad per time;
-    const so = 7                       // search offset
-    const deposit = 0.06                // pheromone deposit amount
-    const decay = 0.7                  // decay rate of the pheromone
-    const searchRadius = 1             // radius for searching.
+    const so = 7                           // search offset
+    const deposit = 0.06                   // pheromone deposit amount
+    const decay = 0.7                      // decay rate of the pheromone
+    const searchRadius = 1                 // radius for searching.
 
     // range of x is -100 - 100
     // range of y is -100 - 100

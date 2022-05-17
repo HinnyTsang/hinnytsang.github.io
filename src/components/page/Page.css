@@ -1,9 +1,9 @@
 .page--container {
-    min-height: 70vh;
+    min-height: 100vh;
     max-width: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     opacity: 0.9;
 }

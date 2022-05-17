@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { useTheme } from '../themeProvider/ThemeProvider'
 import SpaceTravel from 'space-travel'
@@ -25,7 +25,7 @@ const Header = () => {
         canvas: document.getElementById("space-travel"),
         backgroundColor: theme === "light" ? '#B2FFFF' : '#01001F',
         throttle: speed,
-        starfield: {count: 100}
+        starfield: {count: 50}
     });
 
     useEffect(() => {
@@ -40,7 +40,7 @@ const Header = () => {
 
 
     return (
-
+        
         <Navbar expand="lg" variant={theme}>
             <Container className='w-75'>
                 <Navbar.Brand as={Link} to="/">
@@ -49,7 +49,7 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
                         <Nav.Link as={Link} to="/simulation">Simulation</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contact</Nav.Link>

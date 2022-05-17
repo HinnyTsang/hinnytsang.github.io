@@ -26,7 +26,7 @@ const Jumbotron = ({ children, darkMode }) => {
             document.getElementById("hello")
                 .innerText = "Welcome my " + data.country + " friends";
         })
-        .catch (() => {
+        .catch(() => {
             document.getElementById("hello")
                 .innerText = "Welcome my friends";
         })
@@ -38,7 +38,7 @@ const Jumbotron = ({ children, darkMode }) => {
             <Container bsPrefix='jumbotron--container'>
                 <div className='jumbotron--title--container'>
                     <p>Hi, I am</p>
-                    <h1>Hinny Tsang</h1>
+                    <h1 >Hinny Tsang</h1>
                     <p id="hello">--</p>
                 </div>
             </Container>

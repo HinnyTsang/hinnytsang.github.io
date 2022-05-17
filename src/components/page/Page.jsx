@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container } from 'react-bootstrap';
 import './Page.css'
+import { useLocation } from 'react-router-dom';
+
 
 /**
  * default wrapper for all pages.
@@ -9,9 +11,31 @@ import './Page.css'
 const Page = ({ children, title }) => {
     // when every time first switch to current page, 
     // scroll the windows to the top.
-    // useEffect(() => {
-    //     window.scroll(100, 10)
-    // }, []);
+
+    const location = useLocation()
+
+    useEffect(() => {
+
+        console.log(location.pathname)
+
+        if (location.pathname !== '/') {
+            window.scroll({
+                top: window.innerHeight - 70,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+        else {
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+
+    }, [location]);
+
+
     return (
         <Container
             bsPrefix={

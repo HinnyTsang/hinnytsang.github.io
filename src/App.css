@@ -5,6 +5,7 @@ h1 {
 *, a {
     text-shadow: 0px 0px 10px var(--txtShadow1);
     color: var(--txtColor1);
+    /* transition: 600ms ease; */
 }
 
 a:hover {
@@ -43,5 +44,4 @@ a:hover {
     justify-self: flex-start;
     justify-content: center;
     align-items: flex-start;
-    
 }

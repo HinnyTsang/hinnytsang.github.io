@@ -25,3 +25,5 @@ yarn-error.log*
 *.ipynb
 
 /AWS
+
+tree.out

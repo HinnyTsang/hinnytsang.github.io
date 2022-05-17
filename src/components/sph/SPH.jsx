@@ -21,7 +21,7 @@ const SPH = () => {
     const [isPlaying, setPlaying] = useState(true)
 
     // hook for number of particles
-    const [numOfParticle, setNumOfParticle] = useState(40);
+    const [numOfParticle, setNumOfParticle] = useState(30);
 
 
     // paramters for simulation

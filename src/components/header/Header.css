@@ -5,10 +5,12 @@
     justify-content: space-around;
     background-color: var(--bgColor1);
     z-index: 10;
+    transition: var(--speed1) ease;
 }
 
 .navbar-brand {
     font-weight: 10;
+    /* height: 100%; */
     color: var(--txtColor1) !important;
 }
 
