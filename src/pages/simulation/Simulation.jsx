@@ -1,10 +1,11 @@
 import React from 'react'
-import { useEffect } from 'react'
 import { useState } from 'react'
 import { Row, Col, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { Page, SPH, SubTitle, Slime } from '../../components'
 import './Simulation.css'
 
+const Remark = () => <Link to="/simulation#remarks">*</Link>
 
 const Simulation = () => {
 
@@ -15,7 +16,7 @@ const Simulation = () => {
         <Page title="Simulation" id="demo">
             <Row className='w-100'>
                 <Col className='d-flex description'>
-                    <SubTitle>SPH</SubTitle>
+                    <SubTitle id="sph">SPH<Remark /></SubTitle>
                     <p className='section-paragraph'>
                         Demonstraction of a smooth particle hydrodynamics (SPH) simulation in 2D.
                         We are simulating a toy star with SPH with a random initial conditions and a constant potential field.
@@ -27,7 +28,9 @@ const Simulation = () => {
                         >
                             {' blog '}
                         </a>
-                        written by Philip Mocz in 2020. <br />
+                        written by Philip Mocz in 2020.
+                        <br />
+
                         <br />
                         {showSPH ? 'Click Boost to inject energy to the particles!' :
                             'Click Start to start your simulation!'}
@@ -44,7 +47,7 @@ const Simulation = () => {
                         showSPH ?
                             <SPH /> :
                             <div className='preview--container' >
-                                <Button onClick={() => {setShowSPH(true); setShowSlime(false)}} >
+                                <Button onClick={() => { setShowSPH(true); setShowSlime(false) }} >
                                     Start
                                 </Button>
                             </div>
@@ -53,9 +56,9 @@ const Simulation = () => {
             </Row>
             <Row className='w-100'>
                 <Col className='d-flex description'>
-                    <SubTitle>Slime Simulation</SubTitle>
+                    <SubTitle id="slime">Slime Simulation<Remark /></SubTitle>
                     <p className='section-paragraph'>
-                        Demonstraction of a physarum transport networks. Inspired by Sebasian's 
+                        Demonstraction of a physarum transport networks. Inspired by Sebasian's
                         <a href="https://www.youtube.com/watch?v=X-iSQQgOd1A">
                             {' video '}
                         </a> and the algrothm is coming from Jones, Jeff's
@@ -82,7 +85,7 @@ const Simulation = () => {
                         showSlime ?
                             <Slime /> :
                             <div className='preview--container' >
-                                <Button onClick={() => {setShowSlime(true); setShowSPH(false)}} >
+                                <Button onClick={() => { setShowSlime(true); setShowSPH(false) }} >
                                     Start
                                 </Button>
                             </div>
@@ -90,6 +93,7 @@ const Simulation = () => {
                 </Col>
 
             </Row>
+            <p id='remarks' style={{ bottom: '0px', paddingTop: '50px' }}>Current version is written by pure JavaScript. WebGL version for better performence will be update in the future.</p>
         </Page>
     )
 }

@@ -22,7 +22,7 @@ const Home = () => {
       <SubTitle>Whats New?</SubTitle>
       <CardGroup className='card-group mt-5'>
         <Card
-          as={Link} to='../simulation/'
+          as={Link} to='../simulation#sph'
           className="card"
         >
           <Card.Img variant="top"
@@ -36,7 +36,7 @@ const Home = () => {
           </Card.Body>
         </Card>
         <Card
-          as={Link} to='../simulation/'
+          as={Link} to='../simulation#slime'
           className="card"
         >
           <Card.Img variant="top"

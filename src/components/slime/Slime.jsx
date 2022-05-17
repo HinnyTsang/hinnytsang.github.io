@@ -26,13 +26,14 @@ const Slime = () => {
 
     // range of x is -100 - 100
     // range of y is -100 - 100
-    const [x, setX] = useState(Array.from({ length: nCell }).map(() => Math.random() - 0.5))
-    const [y, setY] = useState(Array.from({ length: nCell }).map(() => Math.random() - 0.5))
     const [direction, setDirection] = useState(
         Array.from({ length: nCell })
             .map((v, idx) => (
-                (Math.random()) * Math.PI * 2
+                idx/nCell*Math.PI*2
             )))
+    const [x, setX] = useState(Array.from({ length: nCell }).map((v, i) => 2*Math.cos(direction[i])))
+    const [y, setY] = useState(Array.from({ length: nCell }).map((v, i) => 2*Math.sin(direction[i])))
+
 
 
     const addFood = (e) => {
@@ -103,7 +104,7 @@ const Slime = () => {
                         sense += food[a][b] / (1 + ((i - a) ** 2 + (j - b) ** 2));
                         // let them move away the boundary
                         if (a === w - 1 || a === 0 || b === h - 1 || b === 0)
-                            sense -= 10000;
+                            sense -= 100;
                     }
                 }
                 // console.log(idx, sense);
@@ -154,13 +155,6 @@ const Slime = () => {
                 _food[i][j] *= decay;
             }
         }
-
-        // let i = Math.max(Math.min(Math.floor(Math.random() * w , w - 1)), 0);
-        // let j = Math.max(Math.min(Math.floor(Math.random() * h , h - 1)), 0);
-        // random food spond
-
-        // console.log(i, j);
-        // _food[i][j] += 10
 
         setX(_x);
         setY(_y);
