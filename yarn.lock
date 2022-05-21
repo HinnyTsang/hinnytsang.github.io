@@ -1407,7 +1407,7 @@
     "@types/jest" "*"
 
 "@types/warning@^3.0.0":
-  "integrity" "sha1-DSUBJorY+ZYrdA04fEZU9fjiPlI="
+  "integrity" "sha1-DSUBJorY+ZYrdA04fEZU9fjiPlI= sha512-t/Tvs5qR47OLOr+4E9ckN8AmP2Tf16gWq+/qA4iUGS/OOyHVO8wv2vjJuX8SNOUTJyWb+2t7wJm6cXILFnOROA=="
   "resolved" "https://registry.npmjs.org/@types/warning/-/warning-3.0.0.tgz"
   "version" "3.0.0"
 
@@ -1874,7 +1874,7 @@
     "array-uniq" "^1.0.1"
 
 "array-uniq@^1.0.1":
-  "integrity" "sha1-r2rId6Jcx/dOBYiUdThY39sk/bY="
+  "integrity" "sha1-r2rId6Jcx/dOBYiUdThY39sk/bY= sha512-MNha4BWQ6JbwhFhj03YK552f7cb3AzoE8SzeljgChvL1dl3IcvggXVz1DilzySZkCja+CXuZbdW7yATchWn8/Q=="
   "resolved" "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.3.tgz"
   "version" "1.0.3"
 
@@ -2838,7 +2838,15 @@
     "ansi-styles" "^4.1.0"
     "supports-color" "^7.1.0"
 
-"chalk@^4.0.0", "chalk@^4.1.0":
+"chalk@^4.0.0":
+  "integrity" "sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA=="
+  "resolved" "https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz"
+  "version" "4.1.2"
+  dependencies:
+    "ansi-styles" "^4.1.0"
+    "supports-color" "^7.1.0"
+
+"chalk@^4.1.0":
   "integrity" "sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA=="
   "resolved" "https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz"
   "version" "4.1.2"
@@ -4950,7 +4958,7 @@
     "jsonfile" "^4.0.0"
     "universalify" "^0.1.0"
 
-"fs-extra@^7.0.0", "fs-extra@7.0.0":
+"fs-extra@^7.0.0":
   "integrity" "sha512-EglNDLRpmaTWiD/qraZn6HREAEAHJcJOmxNEYwq6xeMKnVMAy3GUcFB+wXt2C6k4CNvB/mP1y/U3dzvKKj5OtQ=="
   "resolved" "https://registry.npmjs.org/fs-extra/-/fs-extra-7.0.0.tgz"
   "version" "7.0.0"
@@ -4965,6 +4973,15 @@
   "version" "8.1.0"
   dependencies:
     "graceful-fs" "^4.2.0"
+    "jsonfile" "^4.0.0"
+    "universalify" "^0.1.0"
+
+"fs-extra@7.0.0":
+  "integrity" "sha512-EglNDLRpmaTWiD/qraZn6HREAEAHJcJOmxNEYwq6xeMKnVMAy3GUcFB+wXt2C6k4CNvB/mP1y/U3dzvKKj5OtQ=="
+  "resolved" "https://registry.npmjs.org/fs-extra/-/fs-extra-7.0.0.tgz"
+  "version" "7.0.0"
+  dependencies:
+    "graceful-fs" "^4.1.2"
     "jsonfile" "^4.0.0"
     "universalify" "^0.1.0"
 
