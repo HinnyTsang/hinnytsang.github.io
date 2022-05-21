@@ -1,8 +1,6 @@
 .navbar {
     position: fixed;
-    width: 100%;
     opacity: 0.9;
-    justify-content: space-around;
     background-color: var(--bgColor1);
     z-index: 10;
     transition: var(--speed1) ease;

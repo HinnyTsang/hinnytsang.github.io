@@ -3,14 +3,16 @@
 }
 
 .footer {
-    height: 100px;
-    margin-top: 50px;
+    height: 10em;
+    margin-top: 5em;
     background-color: var(--bgColor1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    transition: var(--speed1) ease;
+    transition: 
+    background-color var(--speed1) ease,
+    color var(--speed1) ease,;
 }
 
 .footer > *{
@@ -20,7 +22,6 @@
 
 .footer--info {
     width: 70%;
-    display: flex;
     justify-content: space-between;
 }
 

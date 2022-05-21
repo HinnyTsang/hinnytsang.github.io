@@ -39,7 +39,7 @@ const Jumbotron = ({ children, darkMode }) => {
                 <div className='jumbotron--title--container'>
                     <p>Hi, I am</p>
                     <h1 >Hinny Tsang</h1>
-                    <p id="hello">--</p>
+                    <p id="hello">Welcome my friends</p>
                 </div>
             </Container>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { TelephoneInbound, EnvelopeOpen, Github, Linkedin } from 'react-bootstrap-icons';
+import { EnvelopeOpen, Github, Linkedin } from 'react-bootstrap-icons';
 import './Footer.css'
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
             className='w-100 text-center'
             bsPrefix='footer'
         >
-            <div className='footer--info'>
+            <Container className='w-75 d-flex flex-row justify-content-between'>
                 <div style={{ fontSize: '10px', textShadow: 'none', }}>
                     space-travel theme from <a href='https://www.npmjs.com/package/space-travel'>frequin</a>
                 </div>
@@ -27,7 +27,7 @@ const Footer = () => {
                         <Linkedin style={{ fontSize: "20px" }} />
                     </a>
                 </div>
-            </div>
+            </Container>
             <div className='footer--copyright'>
                 <div style={{ fontSize: '12px', textShadow: 'none' }}>
                     © 2022 Copyright: <Link

@@ -1,7 +1,7 @@
 import React from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import { Footer, Header, Jumbotron } from './components'
-import { Home, About, Research, Profile, Contact, Simulation, NotFound, Algorithm } from './pages'
+import { Home, About, Research, Profile, Contact, Simulation, NotFound } from './pages'
 import './App.css'
 
 const App = () => {

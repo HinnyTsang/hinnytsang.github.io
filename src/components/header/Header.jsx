@@ -41,7 +41,7 @@ const Header = () => {
 
     return (
         
-        <Navbar expand="lg" variant={theme}>
+        <Navbar expand="lg w-100 d-flex justify-content-center" variant={theme}>
             <Container className='w-75'>
                 <Navbar.Brand as={Link} to="/">
                     MY<span className='very-small'>stical</span>-UNIVSRSE
