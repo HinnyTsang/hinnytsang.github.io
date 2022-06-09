@@ -1,12 +1,8 @@
-import React from 'react'
-import { Page } from '../../components'
+import React from 'react';
+import { Page } from '../../components';
 
-const Profile = ({darkMode}) => {
-  return (
-    <Page title="Profile" darkMode={darkMode}>
+const Profile = ({ darkMode }) => {
+  return <Page title="Profile" darkMode={darkMode}></Page>;
+};
 
-    </Page>
-  )
-}
-
-export default Profile
+export default Profile;

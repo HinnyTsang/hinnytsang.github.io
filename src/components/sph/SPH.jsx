@@ -4,14 +4,13 @@ import { Button } from 'react-bootstrap';
 import Particle from './particle/Particle';
 import { calcAcceleration, calcDensity } from './physics';
 import { useInterval } from '../../hooks';
-import { Sandbox } from '..';
 import { gamma } from 'mathjs';
 
 import './SPH.css';
 
 const SPH = () => {
   // calcualte the mean of the array
-  const arrayMean = (arr) => arr.reduce((a, b) => a + b) / arr.length;
+  const arrayMean = arr => arr.reduce((a, b) => a + b) / arr.length;
 
   const delay = 10;
   const [isPlaying, setPlaying] = useState(true);
@@ -39,18 +38,12 @@ const SPH = () => {
 
   // intial conditions
   const initialPosition = () =>
-    Array.from(
-      { length: numOfParticle },
-      () => (Math.random() - 0.5) * 5
-    );
+    Array.from({ length: numOfParticle }, () => (Math.random() - 0.5) * 5);
   const initialVelocity = () => {
-    const v = Array.from(
-      { length: numOfParticle },
-      () => Math.random() - 0.5
-    );
+    const v = Array.from({ length: numOfParticle }, () => Math.random() - 0.5);
     const meanV = arrayMean(v);
     // ensure the net velocity is zero, (mometum is not conserved.)
-    return v.map((val) => val - meanV);
+    return v.map(val => val - meanV);
   };
 
   // all particles parameters
@@ -60,35 +53,15 @@ const SPH = () => {
   const [vy, setVy] = useState(initialVelocity());
 
   // initial setting for density and acceleration.
-  const [ax0, ay0] = calcAcceleration(
-    x,
-    y,
-    vx,
-    vy,
-    m,
-    h,
-    k,
-    n,
-    nu,
-    lambda
-  );
+  const [ax0, ay0] = calcAcceleration(x, y, vx, vy, m, h, k, n, nu, lambda);
   const [ax, setAx] = useState(ax0);
   const [ay, setAy] = useState(ay0);
   const [density, setDensity] = useState(calcDensity(x, y, m, h));
 
   // particles into components
-  const Particles = Array.from(
-    { length: numOfParticle },
-    (item, index) => (
-      <Particle
-        key={index}
-        id={index}
-        x={x[index]}
-        y={y[index]}
-        density={density[index]}
-      />
-    )
-  );
+  const Particles = Array.from({ length: numOfParticle }, (item, index) => (
+    <Particle key={index} id={index} x={x[index]} y={y[index]} density={density[index]} />
+  ));
 
   // main simulation loop
   useInterval(
@@ -107,18 +80,7 @@ const SPH = () => {
       _y = _y.map((val, index) => val + _vy[index] * dt);
 
       // update acceleration
-      const [_ax, _ay] = calcAcceleration(
-        _x,
-        _y,
-        _vx,
-        _vy,
-        m,
-        h,
-        k,
-        n,
-        nu,
-        lambda
-      );
+      const [_ax, _ay] = calcAcceleration(_x, _y, _vx, _vy, m, h, k, n, nu, lambda);
       setAx(_ax);
       setAy(_ay);
 
@@ -130,10 +92,10 @@ const SPH = () => {
       setVx(_vx);
       setVy(_vy);
 
-      setT((prev) => prev + dt);
+      setT(prev => prev + dt);
 
       let density = calcDensity(_x, _y, m, h);
-      setDensity(density.map((val) => val / Math.max(...density)));
+      setDensity(density.map(val => val / Math.max(...density)));
       setNumOfParticle(numOfParticle);
     },
     isPlaying ? delay : null
@@ -147,18 +109,7 @@ const SPH = () => {
       setY(initialPosition());
       setVx(initialVelocity());
       setVy(initialVelocity());
-      let [ax0, ay0] = calcAcceleration(
-        x,
-        y,
-        vx,
-        vy,
-        m,
-        h,
-        k,
-        n,
-        nu,
-        lambda
-      );
+      let [ax0, ay0] = calcAcceleration(x, y, vx, vy, m, h, k, n, nu, lambda);
       setAx(ax0);
       setAy(ay0);
     } else {
@@ -175,26 +126,22 @@ const SPH = () => {
     const dvx = initialVelocity();
     const dvy = initialVelocity();
 
-    setVx((prev) => prev.map((val, idx) => val + 5 * dvx[idx]));
-    setVy((prev) => prev.map((val, idx) => val + 5 * dvy[idx]));
+    setVx(prev => prev.map((val, idx) => val + 5 * dvx[idx]));
+    setVy(prev => prev.map((val, idx) => val + 5 * dvy[idx]));
   };
 
   return (
-    <Sandbox>
-      {Particles}
+    <>
       <div className="w-100 canvas--items">
+        {Particles}
         <p className="counter"> t = {t.toFixed(2)}</p>
         <div className={`canvas--panel`}>
-          <Button onClick={resetSPH}>
-            {isPlaying ? 'Restart' : 'Continue'}
-          </Button>
-          {isPlaying && (
-            <Button onClick={() => setPlaying(false)}>Pause</Button>
-          )}
+          <Button onClick={resetSPH}>{isPlaying ? 'Restart' : 'Continue'}</Button>
+          {isPlaying && <Button onClick={() => setPlaying(false)}>Pause</Button>}
           <Button onClick={energyInject}>Boost</Button>
         </div>
       </div>
-    </Sandbox>
+    </>
   );
 };
 

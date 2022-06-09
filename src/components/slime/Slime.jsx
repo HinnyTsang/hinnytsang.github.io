@@ -1,18 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
-import { Sandbox } from '..';
 import { useInterval } from '../../hooks';
 import Cell from './cell/Cell';
 import './Slime.css';
 
 const Slime = () => {
   const pixels = 25;
-  const nCell = 800;
+  const nCell = 500;
 
   const [food, setFood] = useState(
-    Array.from({ length: pixels }, (v) =>
-      Array.from({ length: pixels }, (v) => 0)
-    )
+    Array.from({ length: pixels }, v => Array.from({ length: pixels }, v => 0))
   );
 
   const h = pixels,
@@ -28,22 +25,16 @@ const Slime = () => {
   // range of x is -100 - 100
   // range of y is -100 - 100
   const [direction, setDirection] = useState(
-    Array.from({ length: nCell }).map(
-      (v, idx) => (idx / nCell) * Math.PI * 2
-    )
+    Array.from({ length: nCell }).map((v, idx) => (idx / nCell) * Math.PI * 2)
   );
   const [x, setX] = useState(
-    Array.from({ length: nCell }).map(
-      (v, i) => 2 * Math.cos(direction[i])
-    )
+    Array.from({ length: nCell }).map((v, i) => 2 * Math.cos(direction[i]))
   );
   const [y, setY] = useState(
-    Array.from({ length: nCell }).map(
-      (v, i) => 2 * Math.sin(direction[i])
-    )
+    Array.from({ length: nCell }).map((v, i) => 2 * Math.sin(direction[i]))
   );
 
-  const addFood = (e) => {
+  const addFood = e => {
     var rect = e.target.getBoundingClientRect();
 
     var x = e.clientX - rect.left; //x position within the element.
@@ -52,7 +43,7 @@ const Slime = () => {
     let i = Math.max(Math.min(Math.floor((y / 300) * w), w - 1), 0);
     let j = Math.max(Math.min(Math.floor((x / 300) * w), h - 1), 0);
 
-    setFood((prev) => [...prev, (prev[i][j] = 100000000)]);
+    setFood(prev => [...prev, (prev[i][j] = 100000000)]);
   };
 
   const TrailMap = Array.from({ length: pixels }, (v, i) =>
@@ -69,9 +60,9 @@ const Slime = () => {
   );
 
   useInterval(() => {
-    const _x = x.map((i) => i);
-    const _y = y.map((i) => i);
-    const _d = direction.map((i) => i);
+    const _x = x.map(i => i);
+    const _y = y.map(i => i);
+    const _d = direction.map(i => i);
     const _food = food;
 
     for (let c = 0; c < nCell; ++c) {
@@ -84,30 +75,15 @@ const Slime = () => {
       f = f.map((v, idx) => {
         let dx = so * Math.cos(v),
           dy = so * Math.sin(v);
-        let i = Math.max(
-          Math.min(Math.floor((_x[c] + dx + w) / 2), w - 1),
-          0
-        );
-        let j = Math.max(
-          Math.min(Math.floor((_y[c] + dy + h) / 2), h - 1),
-          0
-        );
+        let i = Math.max(Math.min(Math.floor((_x[c] + dx + w) / 2), w - 1), 0);
+        let j = Math.max(Math.min(Math.floor((_y[c] + dy + h) / 2), h - 1), 0);
         let sense = 0;
 
-        for (
-          let a = Math.max(0, i - searchRadius);
-          a < Math.min(w, i + searchRadius);
-          ++a
-        ) {
-          for (
-            let b = Math.max(0, j - searchRadius);
-            b < Math.min(h, j + searchRadius);
-            ++b
-          ) {
+        for (let a = Math.max(0, i - searchRadius); a < Math.min(w, i + searchRadius); ++a) {
+          for (let b = Math.max(0, j - searchRadius); b < Math.min(h, j + searchRadius); ++b) {
             sense += food[a][b] / (1 + ((i - a) ** 2 + (j - b) ** 2));
             // let them move away the boundary
-            if (a === w - 1 || a === 0 || b === h - 1 || b === 0)
-              sense -= 100;
+            if (a === w - 1 || a === 0 || b === h - 1 || b === 0) sense -= 100;
           }
         }
         // console.log(idx, sense);
@@ -145,14 +121,8 @@ const Slime = () => {
       _y[c] += dy;
       _d[c] = nd;
 
-      let i = Math.max(
-        Math.min(Math.floor((_x[c] + w) / 2), w - 1),
-        0
-      );
-      let j = Math.max(
-        Math.min(Math.floor((_y[c] + w) / 2), h - 1),
-        0
-      );
+      let i = Math.max(Math.min(Math.floor((_x[c] + w) / 2), w - 1), 0);
+      let j = Math.max(Math.min(Math.floor((_y[c] + w) / 2), h - 1), 0);
 
       _food[i][j] += deposit;
     }
@@ -161,7 +131,6 @@ const Slime = () => {
         _food[i][j] *= decay;
       }
     }
-
     setX(_x);
     setY(_y);
     setDirection(_d);
@@ -169,10 +138,10 @@ const Slime = () => {
   }, 100);
 
   return (
-    <Sandbox>
+    <>
       <div className="cover" onClick={addFood}></div>
       <div className="filter">{TrailMap}</div>
-    </Sandbox>
+    </>
   );
 };
 

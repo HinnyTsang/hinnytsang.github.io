@@ -1,10 +1,10 @@
-.subtitle{
-    font-weight: 100;
-    text-align: center;
-    font-size: var(--titleSize2);
+.subtitle {
+  font-weight: 100;
+  text-align: center;
+  font-size: var(--titleSize2);
 }
 
 .subtitle--container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }

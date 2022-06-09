@@ -1,12 +1,12 @@
-import React from 'react'
-import { Page } from '../../components'
+import React from 'react';
+import { Page } from '../../components';
 
-const Research = ({darkMode}) => {
+const Research = ({ darkMode }) => {
   return (
     <Page title="Research" darkMode={darkMode}>
       {/* <SPH darkMode={darkMode}/> */}
     </Page>
-  )
-}
+  );
+};
 
-export default Research
+export default Research;
