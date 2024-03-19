@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes, Nevigate } from 'react-router-dom';
 import { Footer, Header, Jumbotron } from './components';
 import { Home, About, Research, Profile, Contact, Simulation, NotFound } from './pages';
 import './App.css';
@@ -21,6 +21,9 @@ const App = () => {
           <Route path="/simulation" element={<Simulation />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/demo">
+            <Nevigate push to={"/density_isosurface.html"} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
