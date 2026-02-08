@@ -1,0 +1,11 @@
+{
+  "page.home.title": "Man Hin Tsang",
+  "page.home.subtitle": "Data Scientist · Quant · Full-Stack Developer",
+  "component.nav.about": "About",
+  "component.nav.experience": "Experience",
+  "component.nav.education": "Education",
+  "component.nav.skills": "Skills",
+  "component.nav.projects": "Projects",
+  "component.nav.simulations": "Simulations",
+  "component.footer.copyright": "© {year} Man Hin Tsang. All rights reserved."
+}
