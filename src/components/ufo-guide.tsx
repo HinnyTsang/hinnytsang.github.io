@@ -19,7 +19,7 @@ type Waypoint = { at: number; x: number; y: number };
 const LANDING_AT = 0.95;
 
 const waypoints: Waypoint[] = [
-  { at: 0.0, x: 50, y: 63 }, // start: center bottom (near "See my journey")
+  { at: 0.0, x: -10, y: 10 }, // In standby position
   { at: 0.1, x: 50, y: 55 }, // rising up center
   { at: 0.18, x: 78, y: 45 }, // education: drift right (visual is left)
   { at: 0.3, x: 22, y: 35 }, // hko: swing left (visual is left, direction left)
