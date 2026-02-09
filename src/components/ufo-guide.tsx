@@ -15,14 +15,17 @@ import { profile, socialLinks } from "@/lib/data";
 
 type Waypoint = { at: number; x: number; y: number };
 
+/** Scroll progress at which the UFO transitions from path-following to landing. */
+const LANDING_AT = 0.95;
+
 const waypoints: Waypoint[] = [
-  { at: 0.0, x: 50, y: 70 }, // start: center bottom (near "See my journey")
+  { at: 0.0, x: 50, y: 63 }, // start: center bottom (near "See my journey")
   { at: 0.12, x: 50, y: 55 }, // rising up center
   { at: 0.22, x: 78, y: 45 }, // education: drift right (visual is left)
   { at: 0.38, x: 22, y: 35 }, // oursky: swing left (visual is right)
   { at: 0.54, x: 78, y: 55 }, // smartone: swing right (visual is left)
   { at: 0.72, x: 22, y: 35 }, // pollock: swing left (visual is right)
-  { at: 0.99, x: 50, y: 40 }, // approach center for landing
+  { at: LANDING_AT, x: 50, y: 40 }, // center — exact landing entry point
 ];
 
 function lerp(a: number, b: number, t: number): number {
@@ -62,28 +65,32 @@ export function UfoGuide() {
   const [pos, setPos] = useState({ x: waypoints[0].x, y: waypoints[0].y });
   const [rotate, setRotate] = useState(0);
   const [isLanding, setIsLanding] = useState(false);
-  const prevX = useRef(50);
+  const prevX = useRef(waypoints[0].x);
+  const rotateRef = useRef(0);
 
   // biome-ignore lint/suspicious/noExplicitAny: dynamic i18n keys
   const t: any = useTranslations();
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const landing = v > 0.95;
+    const landing = v > LANDING_AT;
     setIsLanding(landing);
 
     if (landing) {
-      // Landing: ease to center
-      const landingProgress = Math.min((v - 0.95) / 0.12, 1);
-      const eased = smoothstep(landingProgress);
-      setPos({ x: 50, y: lerp(55, 40, eased) });
-      setRotate(rotate * (1 - eased));
+      // Ease from the last waypoint (50, 40) to final position (50, 30).
+      // Progress 0→1 maps LANDING_AT → 1.0
+      const landingT = Math.min((v - LANDING_AT) / (1 - LANDING_AT), 1);
+      const eased = smoothstep(landingT);
+      setPos({ x: 50, y: lerp(40, waypoints[waypoints.length - 2].y, eased) });
+      setRotate(rotateRef.current * (1 - eased));
     } else {
       const { x, y } = getPositionAtProgress(v);
       setPos({ x, y });
 
       // Tilt based on horizontal movement direction
       const dx = x - prevX.current;
-      setRotate(Math.max(-20, Math.min(20, dx * 3)));
+      const newRotate = Math.max(-20, Math.min(20, dx * 3));
+      setRotate(newRotate);
+      rotateRef.current = newRotate;
       prevX.current = x;
     }
   });
@@ -172,13 +179,13 @@ export function UfoGuide() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="pointer-events-auto mt-16 flex flex-col items-center gap-3"
+            className="pointer-events-auto absolute top-full min-w-max left-1/2 mt-8 flex -translate-x-1/2 flex-col items-center gap-3"
           >
-            <p className="text-lg font-bold text-white/90">{t("section.cta.title")}</p>
+            <p className="text-5xl font-bold text-white/90">{t("section.cta.title")}</p>
             <p className="text-sm font-medium text-white/80">{t("section.cta.subtitle")}</p>
             <a
               href={`mailto:${profile.email}`}
-              className="flex items-center gap-1.5 rounded-full bg-green-500 px-3 py-1.5 text-xs font-medium text-white shadow-lg transition-colors hover:bg-green-400"
+              className="flex items-center gap-1.5 rounded-full bg-background px-3 py-1.5 text-xs font-medium text-primary shadow-lg transition-colors hover:bg-secondary"
             >
               <Mail className="h-3 w-3" />
               {t("section.cta.email")}
