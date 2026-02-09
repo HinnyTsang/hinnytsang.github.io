@@ -23,8 +23,8 @@ const waypoints: Waypoint[] = [
   { at: 0.12, x: 50, y: 55 }, // rising up center
   { at: 0.22, x: 78, y: 45 }, // education: drift right (visual is left)
   { at: 0.38, x: 22, y: 35 }, // oursky: swing left (visual is right)
-  { at: 0.54, x: 78, y: 55 }, // smartone: swing right (visual is left)
-  { at: 0.72, x: 22, y: 35 }, // pollock: swing left (visual is right)
+  { at: 0.54, x: 78, y: 15 }, // smartone: swing right (visual is left)
+  { at: 0.72, x: 22, y: 5 }, // pollock: swing left (visual is right)
   { at: LANDING_AT, x: 50, y: 40 }, // center — exact landing entry point
 ];
 
@@ -80,7 +80,7 @@ export function UfoGuide() {
       // Progress 0→1 maps LANDING_AT → 1.0
       const landingT = Math.min((v - LANDING_AT) / (1 - LANDING_AT), 1);
       const eased = smoothstep(landingT);
-      setPos({ x: 50, y: lerp(40, waypoints[waypoints.length - 2].y, eased) });
+      setPos({ x: 50, y: lerp(40, waypoints[waypoints.length - 1].y, eased) });
       setRotate(rotateRef.current * (1 - eased));
     } else {
       const { x, y } = getPositionAtProgress(v);
