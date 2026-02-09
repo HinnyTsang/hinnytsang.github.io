@@ -20,11 +20,12 @@ const LANDING_AT = 0.95;
 
 const waypoints: Waypoint[] = [
   { at: 0.0, x: 50, y: 63 }, // start: center bottom (near "See my journey")
-  { at: 0.12, x: 50, y: 55 }, // rising up center
-  { at: 0.22, x: 78, y: 45 }, // education: drift right (visual is left)
-  { at: 0.38, x: 22, y: 35 }, // oursky: swing left (visual is right)
-  { at: 0.54, x: 78, y: 15 }, // smartone: swing right (visual is left)
-  { at: 0.72, x: 22, y: 5 }, // pollock: swing left (visual is right)
+  { at: 0.1, x: 50, y: 55 }, // rising up center
+  { at: 0.18, x: 78, y: 45 }, // education: drift right (visual is left)
+  { at: 0.3, x: 22, y: 35 }, // hko: swing left (visual is left, direction left)
+  { at: 0.42, x: 78, y: 30 }, // oursky: swing right (visual is right, direction right)
+  { at: 0.56, x: 22, y: 25 }, // smartone: swing left (visual is left, direction left)
+  { at: 0.72, x: 78, y: 20 }, // pollock: swing right (visual is right, direction right)
   { at: LANDING_AT, x: 50, y: 40 }, // center — exact landing entry point
 ];
 
