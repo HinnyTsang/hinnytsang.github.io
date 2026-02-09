@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Navbar } from "@/components/layout/navbar";
+import { ParallaxStars } from "@/components/parallax-stars";
 import { ScrollBackground } from "@/components/scroll-background";
 import { ThemeProvider } from "@/components/theme-provider";
 import { routing } from "@/i18n/routing";
@@ -27,6 +28,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <NextIntlClientProvider>
       <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
         <ScrollBackground />
+        <ParallaxStars />
         <Navbar />
         <main className="pt-14">{children}</main>
       </ThemeProvider>
