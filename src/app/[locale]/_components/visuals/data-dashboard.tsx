@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const metrics = [
-  { label: "Retention", value: 95, suffix: "%", accent: "#06b6d4" },
+  { label: "Retention ↑", value: 5, suffix: "%", accent: "#06b6d4" },
   { label: "Churn ↓", value: 7, suffix: "%", accent: "#10b981" },
   { label: "Web Logs", value: 100, suffix: "M+", accent: "#8b5cf6" },
   { label: "Models", value: 12, suffix: "", accent: "#f59e0b" },
