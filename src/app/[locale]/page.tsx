@@ -9,6 +9,7 @@ import { IntroSection } from "./_components/intro-section";
 import { CodeEditor } from "./_components/visuals/code-editor";
 import { DataDashboard } from "./_components/visuals/data-dashboard";
 import { StockChart } from "./_components/visuals/stock-chart";
+import { WeatherCard } from "./_components/visuals/weather-card";
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -16,6 +17,7 @@ type Props = {
 
 /** Map career IDs to their visual components */
 const careerVisuals: Record<string, React.ReactNode> = {
+  hko: <WeatherCard />,
   oursky: <CodeEditor />,
   smartone: <DataDashboard />,
   pollock: <StockChart />,
