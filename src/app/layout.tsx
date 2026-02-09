@@ -19,6 +19,9 @@ export default function RootLayout({
   return (
     // biome-ignore lint/a11y/useHtmlLang: lang is set dynamically per locale in [locale]/layout.tsx
     <html suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/earth-globe-tool-svgrepo-com.svg" type="image/svg+xml" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
