@@ -11,7 +11,7 @@ export function FooterSection() {
   const year = new Date().getFullYear();
 
   return (
-    <section className="flex min-h-[60vh] flex-col items-center justify-end px-6 pb-8">
+    <section className="flex min-h-screen flex-col items-center justify-end px-6 pb-8">
       <p className="text-xs text-muted-foreground">{t("component.footer.copyright", { year })}</p>
     </section>
   );

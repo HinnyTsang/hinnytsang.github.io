@@ -46,6 +46,7 @@ export const educationItems: EducationItem[] = [
 ];
 
 export const careerItems: CareerItem[] = [
+  { id: "hko", direction: "left", points: ["pipeline", "gis"] },
   { id: "oursky", direction: "right", points: ["fullstack", "devops"] },
   { id: "smartone", direction: "left", points: ["retention", "uplift", "clustering"] },
   { id: "pollock", direction: "right", points: ["quant", "etl", "airflow", "analytics"] },

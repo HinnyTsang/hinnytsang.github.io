@@ -26,6 +26,12 @@
   "section.education.wqu.period": "2025 - 2027",
   "section.education.wqu.desc": "Currently pursuing quantitative finance studies.",
 
+  "section.hko.title": "Internship",
+  "section.hko.org": "Hong Kong Observatory",
+  "section.hko.period": "Jun - Dec 2019",
+  "section.hko.point.pipeline": "Developed a flooding risk assessment pipeline for Hong Kong",
+  "section.hko.point.gis": "Processed topographic data to improve storm surge modelling for flood-prone areas",
+
   "section.oursky.title": "Software Engineer",
   "section.oursky.org": "Oursky",
   "section.oursky.period": "Sep - Dec 2022",

@@ -42,7 +42,7 @@ export function SectionPanel({
       id={id}
       style={{ y }}
       className={cn(
-        "flex min-h-screen w-full flex-col items-center justify-center gap-8 px-6 py-16 md:flex-row md:gap-16 md:px-16",
+        "flex w-full flex-col items-center justify-center gap-8 px-6 py-24 md:min-h-screen md:flex-row md:gap-16 md:px-16 md:py-16",
         className,
       )}
     >
