@@ -15,7 +15,7 @@ type CareerSectionProps = {
 export function CareerSection({ item, visual }: CareerSectionProps) {
   // biome-ignore lint/suspicious/noExplicitAny: dynamic i18n keys
   const t: any = useTranslations();
-  const { id, direction } = item;
+  const { id, direction, points } = item;
 
   return (
     <SectionPanel
@@ -29,7 +29,11 @@ export function CareerSection({ item, visual }: CareerSectionProps) {
         {t(`section.${id}.period`)}
       </Badge>
       <Separator />
-      <p className="leading-relaxed text-muted-foreground">{t(`section.${id}.desc`)}</p>
+      <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
+        {points.map((pointId) => (
+          <li key={pointId}>{t(`section.${id}.point.${pointId}`)}</li>
+        ))}
+      </ul>
     </SectionPanel>
   );
 }

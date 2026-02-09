@@ -12,7 +12,7 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 
 
-[*.{md,html,mdc}]
+[*.{md,html,mdc,svg}]
 indent_size = 2
 
 
