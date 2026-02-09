@@ -11,7 +11,6 @@ export type EducationItem = {
 
 export type CareerItem = {
   id: string;
-  emoji: string;
   direction: "left" | "right";
 };
 
@@ -45,9 +44,9 @@ export const educationItems: EducationItem[] = [
 ];
 
 export const careerItems: CareerItem[] = [
-  { id: "oursky", emoji: "🏗️", direction: "right" },
-  { id: "smartone", emoji: "📡", direction: "left" },
-  { id: "pollock", emoji: "📈", direction: "right" },
+  { id: "oursky", direction: "right" },
+  { id: "smartone", direction: "left" },
+  { id: "pollock", direction: "right" },
 ];
 
 // ─── Skills (not translated — tool/tech names are universal) ─────────────────

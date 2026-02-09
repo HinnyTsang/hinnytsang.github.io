@@ -36,7 +36,7 @@
   "section.smartone.period": "Dec 2022 - Feb 2024",
   "section.smartone.desc": "Built recommendation model improving customer retention by 5%. Developed X-learner uplift model with PySpark ETL reducing churn by 7%. Labelled 100M+ daily web logs using hierarchical clustering on Spark.",
 
-  "section.pollock.title": "Data Scientist — Quant Trading Desk",
+  "section.pollock.title": "Data Scientist",
   "section.pollock.org": "Pollock Asset Management",
   "section.pollock.period": "Sep 2024 - Sep 2025",
   "section.pollock.desc": "End-to-end quantitative models for statistical arbitrage (Sharpe 2.1). Built ETL pipelines with Bloomberg SAPI/BQL. Deployed Apache Airflow orchestrating 30+ pipelines with MLflow tracking. Internal analytics tools used daily by PM.",
