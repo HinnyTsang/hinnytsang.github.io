@@ -28,7 +28,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <NextIntlClientProvider>
       <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
         <ScrollBackground />
-        <ParallaxStars />
+        <ParallaxStars density={10} shootingStarFrequency={[500, 1000]} />
         <UfoGuide />
         <main>{children}</main>
       </ThemeProvider>
