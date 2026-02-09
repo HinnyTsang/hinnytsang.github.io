@@ -45,10 +45,5 @@
   "section.cta.subtitle": "I'm always open to new opportunities and collaborations.",
   "section.cta.email": "Get in touch",
 
-  "component.nav.education": "Education",
-  "component.nav.oursky": "Oursky",
-  "component.nav.smartone": "SmarTone",
-  "component.nav.pollock": "Pollock",
-  "component.nav.simulations": "Simulations",
   "component.footer.copyright": "© {year} Man Hin Tsang. All rights reserved."
 }
