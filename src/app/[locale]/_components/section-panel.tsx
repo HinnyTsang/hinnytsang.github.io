@@ -48,6 +48,7 @@ export function SectionPanel({
     >
       <FadeIn
         direction={direction === "left" ? "left" : "right"}
+        fadeOut
         className={cn(
           "flex w-full items-center justify-center md:w-1/2",
           direction === "right" && "md:order-2",
@@ -58,6 +59,7 @@ export function SectionPanel({
       <FadeIn
         direction={direction === "left" ? "right" : "left"}
         delay={0.15}
+        fadeOut
         className={cn("flex w-full flex-col gap-4 md:w-1/2", direction === "right" && "md:order-1")}
       >
         {children}
