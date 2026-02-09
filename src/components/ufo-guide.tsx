@@ -16,12 +16,12 @@ import { profile, socialLinks } from "@/lib/data";
 type Waypoint = { at: number; x: number; y: number };
 
 const waypoints: Waypoint[] = [
-  { at: 0.0, x: 50, y: 75 }, // start: center bottom (near "See my journey")
-  { at: 0.12, x: 50, y: 50 }, // rising up center
+  { at: 0.0, x: 50, y: 70 }, // start: center bottom (near "See my journey")
+  { at: 0.12, x: 50, y: 55 }, // rising up center
   { at: 0.22, x: 78, y: 45 }, // education: drift right (visual is left)
-  { at: 0.38, x: 22, y: 50 }, // oursky: swing left (visual is right)
-  { at: 0.54, x: 78, y: 45 }, // smartone: swing right (visual is left)
-  { at: 0.72, x: 22, y: 50 }, // pollock: swing left (visual is right)
+  { at: 0.38, x: 22, y: 35 }, // oursky: swing left (visual is right)
+  { at: 0.54, x: 78, y: 55 }, // smartone: swing right (visual is left)
+  { at: 0.72, x: 22, y: 35 }, // pollock: swing left (visual is right)
   { at: 0.99, x: 50, y: 40 }, // approach center for landing
 ];
 
@@ -59,7 +59,7 @@ function getPositionAtProgress(v: number): { x: number; y: number } {
 
 export function UfoGuide() {
   const { scrollYProgress } = useScroll();
-  const [pos, setPos] = useState({ x: 50, y: 75 });
+  const [pos, setPos] = useState({ x: waypoints[0].x, y: waypoints[0].y });
   const [rotate, setRotate] = useState(0);
   const [isLanding, setIsLanding] = useState(false);
   const prevX = useRef(50);
@@ -162,43 +162,43 @@ export function UfoGuide() {
           {/* Glow */}
           <div className="mx-auto h-1.5 w-10 rounded-full bg-green-400/30 blur-sm" />
         </motion.div>
-
-        {/* CTA from tractor beam */}
-        <AnimatePresence>
-          {isLanding && (
-            <motion.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="pointer-events-auto mt-6 flex flex-col items-center gap-3"
-            >
-              <p className="text-sm font-bold text-white/90">{t("section.cta.title")}</p>
-              <p className="text-xs font-medium text-white/80">{t("section.cta.subtitle")}</p>
-              <a
-                href={`mailto:${profile.email}`}
-                className="flex items-center gap-1.5 rounded-full bg-green-500 px-3 py-1.5 text-xs font-medium text-white shadow-lg transition-colors hover:bg-green-400"
-              >
-                <Mail className="h-3 w-3" />
-                {t("section.cta.email")}
-              </a>
-              <div className="flex gap-3">
-                {socialLinks.map(({ platform, url }) => (
-                  <a
-                    key={platform}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[10px] text-white/50 underline-offset-2 hover:text-white/80 hover:underline"
-                  >
-                    {platform}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </motion.div>
+
+      {/* CTA — outside the scaled container */}
+      <AnimatePresence>
+        {isLanding && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="pointer-events-auto mt-16 flex flex-col items-center gap-3"
+          >
+            <p className="text-lg font-bold text-white/90">{t("section.cta.title")}</p>
+            <p className="text-sm font-medium text-white/80">{t("section.cta.subtitle")}</p>
+            <a
+              href={`mailto:${profile.email}`}
+              className="flex items-center gap-1.5 rounded-full bg-green-500 px-3 py-1.5 text-xs font-medium text-white shadow-lg transition-colors hover:bg-green-400"
+            >
+              <Mail className="h-3 w-3" />
+              {t("section.cta.email")}
+            </a>
+            <div className="flex gap-3">
+              {socialLinks.map(({ platform, url }) => (
+                <a
+                  key={platform}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] text-white/50 underline-offset-2 hover:text-white/80 hover:underline"
+                >
+                  {platform}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
