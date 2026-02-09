@@ -17,7 +17,7 @@ export function IntroSection() {
 
       <a
         href="#education"
-        className="mt-12 flex flex-col items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        className="mt-24 flex flex-col items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >
         {t("section.intro.cta")}
         <ChevronDown className="h-5 w-5 animate-bounce" />
