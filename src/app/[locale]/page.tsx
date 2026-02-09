@@ -3,7 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 import { careerItems } from "@/lib/data";
 import { CareerSection } from "./_components/career-section";
-import { CtaSection } from "./_components/cta-section";
+import { FooterSection } from "./_components/cta-section";
 import { EducationSection } from "./_components/education-section";
 import { IntroSection } from "./_components/intro-section";
 import { CodeEditor } from "./_components/visuals/code-editor";
@@ -32,7 +32,7 @@ export default function Home({ params }: Props) {
       {careerItems.map((item) => (
         <CareerSection key={item.id} item={item} visual={careerVisuals[item.id]} />
       ))}
-      <CtaSection />
+      <FooterSection />
     </>
   );
 }

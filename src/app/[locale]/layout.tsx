@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { ParallaxStars } from "@/components/parallax-stars";
 import { ScrollBackground } from "@/components/scroll-background";
 import { ThemeProvider } from "@/components/theme-provider";
+import { UfoGuide } from "@/components/ufo-guide";
 import { routing } from "@/i18n/routing";
 
 type Props = {
@@ -29,6 +30,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
         <ScrollBackground />
         <ParallaxStars />
+        <UfoGuide />
         <Navbar />
         <main className="pt-14">{children}</main>
       </ThemeProvider>
