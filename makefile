@@ -9,6 +9,7 @@ build:
 .PHONY: check
 check:
 	npx @biomejs/biome check .
+	npx tsx scripts/check-i18n.ts
 
 .PHONY: format
 format:
