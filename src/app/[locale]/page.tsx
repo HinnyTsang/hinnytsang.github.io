@@ -6,6 +6,7 @@ import { CareerSection } from "./_components/career-section";
 import { FooterSection } from "./_components/cta-section";
 import { EducationSection } from "./_components/education-section";
 import { IntroSection } from "./_components/intro-section";
+import { ChatCard } from "./_components/visuals/chat-card";
 import { CodeEditor } from "./_components/visuals/code-editor";
 import { DataDashboard } from "./_components/visuals/data-dashboard";
 import { StockChart } from "./_components/visuals/stock-chart";
@@ -21,6 +22,7 @@ const careerVisuals: Record<string, React.ReactNode> = {
   oursky: <CodeEditor />,
   smartone: <DataDashboard />,
   pollock: <StockChart />,
+  stealth: <ChatCard />,
 };
 
 export default function Home({ params }: Props) {

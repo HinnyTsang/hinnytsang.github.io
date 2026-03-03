@@ -1,10 +1,10 @@
 {
   "page.home.title": "Man Hin Tsang",
-  "page.home.subtitle": "Data Scientist / Quant / Developer",
+  "page.home.subtitle": "Data Scientist / AI Engineer",
 
   "section.intro.greeting": "Hi, I'm",
   "section.intro.name": "Hinny Tsang",
-  "section.intro.headline": "Data Scientist / Quant / Developer",
+  "section.intro.headline": "Data Scientist / AI Engineer",
   "section.intro.summary": "I enjoy turning messy data into useful things - whether that's a trading signal, an internal tool, or a pipeline that just works. Background in physics, currently exploring the intersection of data science and quantitative finance.",
   "section.intro.cta": "See my journey",
 
@@ -20,7 +20,7 @@
   "section.education.uva.title": "Visiting Scholar",
   "section.education.uva.org": "University of Virginia",
   "section.education.uva.period": "Jul - Aug 2022",
-  "section.education.uva.desc": "NASA GPU Hackathon 2022 — achieved 8x acceleration of hydrodynamic code with OpenACC GPU parallelization.",
+  "section.education.uva.desc": "NASA GPU Hackathon 2022: achieved 8x acceleration of hydrodynamic code with OpenACC GPU parallelization.",
   "section.education.wqu.title": "MSc in Financial Engineering",
   "section.education.wqu.org": "The WorldQuant University",
   "section.education.wqu.period": "2025 - 2027",
@@ -52,6 +52,13 @@
   "section.pollock.point.etl": "Built ETL pipelines with Bloomberg SAPI/BQL",
   "section.pollock.point.airflow": "Deployed Apache Airflow orchestrating 30+ pipelines with MLflow tracking",
   "section.pollock.point.analytics": "Internal analytics tools used daily by PM",
+
+  "section.stealth.title": "Founding AI Engineer",
+  "section.stealth.org": "Stealth Startup",
+  "section.stealth.period": "Nov 2025 - Present",
+  "section.stealth.point.llm": "Building production LLM systems with self-hosted open-source models",
+  "section.stealth.point.rag": "Designed RAG pipelines and policy-based agent architectures",
+  "section.stealth.point.infra": "End-to-end AI infrastructure from model serving to deployment",
 
   "section.cta.title": "What's next?",
   "section.cta.subtitle": "I'm always open to new opportunities and collaborations.",
