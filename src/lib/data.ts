@@ -50,7 +50,7 @@ export const careerItems: CareerItem[] = [
   { id: "oursky", direction: "right", points: ["fullstack", "devops"] },
   { id: "smartone", direction: "left", points: ["retention", "uplift", "clustering"] },
   { id: "pollock", direction: "right", points: ["quant", "etl", "airflow", "analytics"] },
-  { id: "stealth", direction: "left", points: ["llm", "rag", "infra"] },
+  { id: "stealth", direction: "left", points: ["project"] },
 ];
 
 // ─── Skills (not translated — tool/tech names are universal) ─────────────────
