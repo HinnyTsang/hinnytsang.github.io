@@ -56,9 +56,7 @@
   "section.stealth.title": "Founding AI Engineer",
   "section.stealth.org": "Stealth Startup",
   "section.stealth.period": "Nov 2025 - Present",
-  "section.stealth.point.llm": "Building production LLM systems with self-hosted open-source models",
-  "section.stealth.point.rag": "Designed RAG pipelines and policy-based agent architectures",
-  "section.stealth.point.infra": "End-to-end AI infrastructure from model serving to deployment",
+  "section.stealth.point.project": "Lead greenfield development of full-stack AI-powered MVP from scratch, architecting the whole scalable system",
 
   "section.cta.title": "What's next?",
   "section.cta.subtitle": "I'm always open to new opportunities and collaborations.",
