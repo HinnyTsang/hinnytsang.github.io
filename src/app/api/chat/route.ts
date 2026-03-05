@@ -9,6 +9,8 @@ import {
   toOpenAIMessages,
 } from "@/app/[locale]/_components/visuals/hooks/use-llama-stream";
 
+export const runtime = "edge";
+
 const API_URL = `${process.env.LLAMA_BASE_URL}/v1/chat/completions`;
 
 export async function POST(req: Request) {
